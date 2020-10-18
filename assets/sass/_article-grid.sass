@@ -1,12 +1,12 @@
 .article
     &-grid
         max-width: 850px
-        margin: 30px 0 
+        margin: 30px 0
         padding: 0
         list-style: none
         display: grid
         grid-template-columns: repeat(3, 1fr)
-        grid-template-rows: minmax(min-content, max-content) repeat(2, 1fr)
+        grid-template-rows: minmax(min-content, max-content) repeat(2, minmax(200px, max-content))
         grid-gap: 30px
         &-permalink
             text-decoration: none
@@ -38,7 +38,7 @@
                     //     object-fit: cover
                     &-title
                         width: 90%
-                        font-family: Roboto Slab;
+                        font-family: Roboto Slab
                         font-style: normal
                         font-weight: bold
                         font-size: 25px
@@ -88,6 +88,7 @@
             &-2
                 grid-area: 1 / 3 / 2 / 4
                 position: relative
+                background-color: transparent
                 &::before
                     content: ''
                     position: absolute
@@ -96,6 +97,13 @@
                     width: 100%
                     height: 100%
                 .article-grid
+                    &-thumb
+                        position: absolute
+                        height: 100%
+                        width: 100%
+                        left: 0
+                        top: 0
+                        object-fit: cover
                     &-permalink
                         position: absolute
                         left: 0
@@ -105,8 +113,8 @@
                         height: 100%
                         display: flex
                         flex-direction: column
-                        align-items: flex-start
                         justify-content: space-between
+                        align-items: flex-start
                         padding: 25px
                     &-title
                         font-family: Roboto Slab
@@ -116,17 +124,18 @@
                         line-height: 25px
                         margin-top: 23px
                         margin-bottom: 27px
+                        color: #ffffff
                 .tag
                     padding: 5px 12px
                     background: #3DC47E
                     border-radius: 3px
-                    color: #fff
+                    color: #ffffff
                     font-size: 12px
                     line-height: 15px
                     text-transform: capitalize
                 .category-name
+                    margin-top: auto
                     color: #E7D9FF
-                    margin-top: 20px
                     font-family: "Lato Black", sans-serif
                     font-size: 12px
                     line-height: 15px
@@ -135,6 +144,7 @@
                     display: flex
                     align-items: center
                     &-info
+                        color: #ffffff
                         display: flex
                         align-items: center
                         flex-wrap: wrap
@@ -144,8 +154,53 @@
                         height: 45px
                         border-radius: 50%
                     &-name
-
+                        flex-basis: 100%
+                .date, .comments, .likes
+                    opacity: 0.4
+                    display: flex
+                    align-items: center
+                    &:not(:last-child)
+                        margin-right: 7px
+                    &-counter
+                        margin-left: 5px
             &-3
                 grid-area: 2 / 1 / 4 / 2
+                .article
+                    &-thumb
+                        height: 275px
+                        object-fit: cover
+                        width: 100%
+                    &-grid
+                        &-title
+                            padding: 15px 25px 35px
+                            font-family: Roboto Slab
+                            font-style: normal
+                            font-weight: bold
+                            font-size: 16px
+                            line-height: 25px
+                            margin: 0
             &-default
+                position: relative
+                .article
+                    &-grid
+                        &-permalink
+                            padding: 25px 25px 30px
+                            position: absolute
+                            width: 100%
+                            height: 100%
+                            display: flex
+                            flex-direction: column
+                            justify-content: space-between
+                            align-items: flex-start
+                        &-title
+                            font-family: Roboto Slab
+                            font-style: normal
+                            font-weight: bold
+                            font-size: 16px
+                            line-height: 25px
+                            margin: 0
+                            margin-bottom: 5px
+                        &-excerpt
+                            margin: 0
+                            margin-bottom: auto
 
