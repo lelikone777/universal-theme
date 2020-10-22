@@ -247,4 +247,5 @@
     <!-- подключаем сайдбар -->
     <?php get_sidebar(); ?>
     </div>
+    <?php get_footer();?>
 </div>

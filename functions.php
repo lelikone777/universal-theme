@@ -170,13 +170,28 @@ function register_downloader_widget() {
 add_action( 'widgets_init', 'register_downloader_widget' );
 
 
+/* Подключение сайдбара (Виджеты) 2 .*/
 
+function universal_example_widgets_init_2() {
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Сайдбар с последними постами', 'universal-theme' ),
+			'id'            => 'second-sidebar-last-posts',
+			'description'   => esc_html__( 'Добавьте виджеты сюда 2.', 'universal-theme' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+}
+add_action( 'widgets_init', 'universal_example_widgets_init_2' );
 
-
+//подключаем стили и шрифты
 function enqueue_universal_style() {
-    wp_enqueue_style( 'style', get_stylesheet_uri() );
+	wp_enqueue_style( 'style', get_stylesheet_uri() );
+	wp_enqueue_style( 'Roboto-Slab', '//fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
     wp_enqueue_style( 'universal-theme', get_template_directory_uri(  ) . '/assets/css/universal-theme.css', 'style');
-    wp_enqueue_style( 'Roboto-Slab', 'https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_universal_style' );
 
