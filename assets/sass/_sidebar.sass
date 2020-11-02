@@ -3,6 +3,16 @@
         margin-left: 30px
         margin-top: 30px
 .widget
+    background-color: #fff
+    border-radius: 10px
+    &-title
+        padding: 20px 25px
+        border-bottom: 1px solid #D9DADB
+        font-size: 14px
+        line-height: 20px
+        font-family: "Lato Black", sans-serif
+        margin: 0
+        text-transform: uppercase
     &-downloader
         background: #3bbdc4 url('../images/file.svg') no-repeat top 22px right 24px
         border-radius: 10px
@@ -12,12 +22,15 @@
         position: relative
         .widget
             &-title
+                text-transform: none
                 margin-top: 0
                 font-family: Roboto Slab
                 font-style: normal
                 font-weight: bold
                 font-size: 16px
                 line-height: 25px
+                border: none
+                padding: 0
             &-link
                 position: absolute
                 bottom: 0
@@ -42,8 +55,38 @@
             font-size: 14px
             line-height: 20px
             margin: 0
-
-
-
-        
-        
+            border: 1px solid #000
+    .tagcloud
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        flex-wrap: wrap
+        padding: 25px
+        padding-bottom: 35px
+    .tag-cloud-link
+        margin-right: 10px
+        margin-bottom: 15px
+        text-decoration: none
+        line-height: 20px
+        color: #262D33
+        padding: 5px 15px
+        border: 1px solid #d9dadb
+        border-radius: 5px
+    &-social
+        &-wrapper
+            display: flex
+            justify-content: center
+            align-items: center
+            padding: 10px 30px 25px
+        &-icon
+            margin: 0 10px
+        .widget
+            &-title
+                border-bottom: none
+                padding-bottom: 25px
+                font-family: Roboto Slab
+                font-style: normal
+                font-weight: bold
+                font-size: 20px
+                line-height: 25px
+                text-align: center
