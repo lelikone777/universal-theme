@@ -139,6 +139,7 @@
             $query = new WP_Query( [
             //подключаем 7 постов
                 'posts_per_page' => 7,
+                'category__not_in' => 22,
             ] );
             //проверяем, есть ли посты
             if ( $query->have_posts() ) {
@@ -210,7 +211,7 @@
                             </li>
                         <?php
                         break;
-                        //выводим третий пост 
+                        //выводим третий пост <!-- Вывода постов, функции цикла: the_title() и т.д. -->
                         case '3' : ?>
                             <li class="article-grid-item article-grid-item-3">
                                 <a href="<?php the_permalink()?>" class="article-grid-permalink">
@@ -220,7 +221,6 @@
                             </li>
                         <?php
                         break;
-
                         // выводим остальные посты
                         default: ?>
                             <li class="article-grid-item article-grid-item-default">
@@ -234,7 +234,7 @@
                         break;
                     }
                     ?>
-            <!-- Вывода постов, функции цикла: the_title() и т.д. -->
+            
             <?php 
         }
     } else {
@@ -247,5 +247,97 @@
     <!-- подключаем сайдбар -->
     <?php get_sidebar(); ?>
     </div>
+</div>
+
+
+<?php		
+global $post;
+
+$query = new WP_Query( [
+    'posts_per_page' => 1,
+    'category_name' => 'investigation',
+] );
+
+if ( $query->have_posts() ) {
+	while ( $query->have_posts() ) {
+		$query->the_post();
+		?>
+        <!-- Вывода постов, функции цикла: the_title() и т.д. -->
+        <section class="investigation" style="background: linear-gradient(0deg, rgba(64, 48, 61, 0.35), rgba(64, 48, 61, 0.35)), url(<?php echo get_the_post_thumbnail_url();?>) no-repeat center center">
+            <div class="container">
+                <h2 class="investigation-title" ><?php the_title(); ?> </h2>
+                <a href="<?php echo get_the_permalink() ?>" class="more">Читать статью</a>
+            </div>
+        </section>
+		<?php 
+	}
+} else {
+	// Постов не найдено
+}
+
+wp_reset_postdata(); // Сбрасываем $post
+?>
+
+<div class="container">
+    <section class="news">
+        <ul class="news-list">
+            <?php		
+                global $post;
+
+                $query = new WP_Query( [
+                    'posts_per_page' => 6,
+                ] );
+
+                if ( $query->have_posts() ) {
+                    while ( $query->have_posts() ) {
+                        $query->the_post();
+                        ?>
+                        <!-- Вывода постов, функции цикла: the_title() и т.д. -->
+
+
+
+                        <li class="news-item" >
+                           <img src="<?php echo get_the_post_thumbnail_url()?>" alt="news-img" class="news-img">
+                           <div class="news-info">
+                                <span class="news-category-name"> <?php $category = get_the_category(); echo $category [0]->name; ?></span> 
+                                <h4 class="news-title"> <?php the_title()?></h4>
+                                <p class="news-excerpt"> 
+                                    <?php echo mb_strimwidth(get_the_excerpt(), 0, 160, '...') ?> 
+                                </p>
+                                <div class="news-feedback">
+                                    <span class="date"><?php the_time( 'j F' );?></span>
+                                    <div class="comments">   
+                                        <img src="<?php echo get_template_directory_uri(  ) . './assets/images/comment-white.svg' ?>" alt="icon: comment" class="comments-icon">    
+                                        <span class="comments-counter"> <?php comments_number('0', '1', '%')  ?> </span>  
+                                    </div>
+                                    <div class="likes">
+                                        <img src="<?php echo get_template_directory_uri() . '/assets/images/Heart.svg' ?>" alt="icon: like" class="likes-icon">
+                                        <span class="likes-counter"><?php comments_number('0', '1', '%') ?> </span>
+                                    </div> 
+                                </div>
+                           </div>
+                        </li>
+
+
+
+                        <?php 
+                    }
+                } else {
+                    ?>
+                    <!-- Вывода постов, функции цикла: the_title() и т.д. -->
+                    <p>Постов не найдено</p>
+                    <?php  
+                }
+
+                wp_reset_postdata(); // Сбрасываем $post
+            ?>
+        </ul>
+    </section>
+</div>
+
+
+
+
+<div class="container">
     <?php get_footer();?>
 </div>
