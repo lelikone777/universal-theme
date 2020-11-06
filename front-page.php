@@ -29,7 +29,16 @@
                     </div>
                 </a>
                 <div class="post-text">
-                    <?php the_category(); ?>
+                    <?php 
+                        foreach (get_the_category() as $category) {
+                            printf(
+                                '<a href="%s" class="category-link %s">%s</a>',
+                                esc_url( get_category_link( $category ) ),
+                                esc_html( $category -> slug ),
+                                esc_html( $category -> name ),
+                            );
+                        }
+                    ?>
                     <h2 class="post-title"><?php echo mb_strimwidth(get_the_title(), 0, 50, '...') ?></h2>
                     <a href="<?php echo get_the_permalink(); ?>" class="more">Читать далее</a>
                 </div>
@@ -68,7 +77,16 @@
                             ?>
 
                     <li class="post">
-                        <?php the_category(); ?>
+                    <?php 
+                        foreach (get_the_category() as $category) {
+                            printf(
+                                '<a href="%s" class="category-link %s">%s</a>',
+                                esc_url( get_category_link( $category ) ),
+                                esc_html( $category -> slug ),
+                                esc_html( $category -> name ),
+                            );
+                        }
+                    ?>
                         <a class="post-permalink" href="<?php echo get_the_permalink(); ?>" 
                         <h4 class="post-title">  <?php echo mb_strimwidth(get_the_title(), 0, 60, '...') ?> </h4>
                         </a>
@@ -299,7 +317,18 @@ wp_reset_postdata(); // Сбрасываем $post
                         <li class="news-item" >
                            <img src="<?php echo get_the_post_thumbnail_url()?>" alt="news-img" class="news-img">
                            <div class="news-info">
-                                <span class="news-category-name"> <?php $category = get_the_category(); echo $category [0]->name; ?></span> 
+                                <span class="news-category-name"> 
+                                <?php 
+                        foreach (get_the_category() as $category) {
+                            printf(
+                                '<a href="%s" class="category-link %s">%s</a>',
+                                esc_url( get_category_link( $category ) ),
+                                esc_html( $category -> slug ),
+                                esc_html( $category -> name ),
+                                    );
+                                }
+                                ?>
+                                </span> 
                                 <h4 class="news-title"> <?php the_title()?></h4>
                                 <p class="news-excerpt"> 
                                     <?php echo mb_strimwidth(get_the_excerpt(), 0, 160, '...') ?> 

@@ -58,16 +58,6 @@
             height: 45px
             border-radius: 50%
         .post
-            &-categories
-                padding: 0
-                margin: 0
-                a
-                    color: #4592ff
-                    text-transform: uppercase
-                    font-weight: 900
-                    font-size: 12px
-                    line-height: 15px
-                    text-decoration: none
             &-title
                 font-size: 40px
                 line-height: 50px
@@ -99,6 +89,9 @@
             margin: 0
             border-top: 1px solid #D9DADB
             min-height: 100px
+            display: flex
+            flex-direction: column
+
             &-categories
                 padding: 0
                 margin: 0
@@ -112,6 +105,7 @@
             &-permalink
                 text-decoration: none
                 color: #4B5157
+                margin-top: 8px
             &:hover
                 background-color: #f5f5f5
             &-title
@@ -134,4 +128,24 @@
     background-position: center right 20px
     &:focus, &:visited, &:hover
         color: #fff
+.category-link
+    color: #4592ff
+    text-transform: uppercase
+    font-weight: 900
+    font-size: 12px
+    line-height: 15px
+    text-decoration: none
+    &:visited
+        color: #FFA34D
+    &.web-design
+        color: #FFA34D
+    &.javascript
+        color: #6E99AE
+    &.html
+        color: #AC8EE3    
+    &.css
+        color: #3DC47E
+    &.articles
+        color: #FF4F52
+    
         
