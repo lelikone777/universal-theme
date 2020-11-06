@@ -201,8 +201,8 @@
                                                     <span class="comments-counter"> <?php comments_number('0', '1', '%')  ?> </span>  
                                                 </div>
                                                 <div class="likes">
-                                                    <img src="<?php echo get_template_directory_uri() . '/assets/images/Heart.svg' ?>" alt="icon: like" class="likes-icon">
-                                                    <span class="likes-counter"><?php comments_number('0', '1', '%') ?> </span>
+                                                    <img src="<?php echo get_template_directory_uri(  ) . '/assets/images/heart.svg' ?>" alt="icon: like" class="likes-icon">
+                                                    <span class="likes-counter"><?php comments_number('0', '1', '%')  ?></span>
                                                 </div> 
                                             </div>
                                         </div>
@@ -307,11 +307,11 @@ wp_reset_postdata(); // Сбрасываем $post
                                 <div class="news-feedback">
                                     <span class="date"><?php the_time( 'j F' );?></span>
                                     <div class="comments">   
-                                        <img src="<?php echo get_template_directory_uri(  ) . './assets/images/comment-white.svg' ?>" alt="icon: comment" class="comments-icon">    
+                                    <img src="<?php echo get_template_directory_uri(  ) . './assets/images/comment.svg' ?>" alt="icon: comment" class="comments-icon">
                                         <span class="comments-counter"> <?php comments_number('0', '1', '%')  ?> </span>  
                                     </div>
                                     <div class="likes">
-                                        <img src="<?php echo get_template_directory_uri() . '/assets/images/Heart.svg' ?>" alt="icon: like" class="likes-icon">
+                                    <img src="<?php echo get_template_directory_uri() . '/assets/images/heart-grey.svg' ?>" alt="icon: like" class="likes-icon">
                                         <span class="likes-counter"><?php comments_number('0', '1', '%') ?> </span>
                                     </div> 
                                 </div>
