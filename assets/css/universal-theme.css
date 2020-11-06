@@ -624,9 +624,14 @@ body {
   color: #939699;
 }
 
+body {
+  counter-reset: section;
+}
+
 .sidebar-front-page {
   margin-left: 30px;
   margin-top: 30px;
+  width: 23%;
 }
 
 .widget {
@@ -651,6 +656,7 @@ body {
   padding: 25px;
   padding-bottom: 55px;
   position: relative;
+  height: 170px;
 }
 
 .widget-downloader .widget-title {
@@ -696,6 +702,56 @@ body {
   border: 1px solid #000;
 }
 
+.widget-recent-posts-wrapper {
+  padding: 0 25px 17px;
+}
+
+.widget-recent-posts a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  position: relative;
+}
+
+.widget-recent-posts a:not(:last-child) {
+  border-bottom: 1px solid #d9dadb;
+}
+
+.widget-recent-posts a::before {
+  position: absolute;
+  right: 5px;
+  color: #262d33;
+  opacity: 0.08;
+  font-size: 70px;
+  line-height: 50px;
+  font-family: "Lato Black", sans-serif;
+  font-style: italic;
+  counter-increment: section;
+  content: counter(section);
+}
+
+.widget-recent-posts a img {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+}
+
+.widget-recent-posts a h4 {
+  font-size: 14px;
+  align-items: center;
+  color: #4B5157;
+  margin-top: 0;
+  margin-bottom: 3px;
+}
+
+.widget-recent-posts a span {
+  color: #939699;
+  font-size: 12px;
+  line-height: 15px;
+}
+
 .widget .tagcloud {
   display: flex;
   align-items: center;
@@ -738,6 +794,10 @@ body {
   text-align: center;
 }
 
+.frontpage-bottom .sidebar-front-page {
+  margin: 0;
+}
+
 .investigation {
   padding: 50px 0 55px;
   text-align: center;
@@ -760,11 +820,15 @@ h4, p {
   margin: 0;
 }
 
+.frontpage-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
 .news {
   display: flex;
   border-radius: 10px;
   background-color: #fff;
-  max-width: 850px;
   margin-bottom: 60px;
 }
 

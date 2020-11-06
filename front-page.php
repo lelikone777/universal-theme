@@ -262,8 +262,8 @@
     wp_reset_postdata(); // Сбрасываем $post
     ?>
         </ul>
-    <!-- подключаем сайдбар -->
-    <?php get_sidebar(); ?>
+    <!-- подключаем верхний сайдбар -->
+    <?php get_sidebar('home-top'); ?>
     </div>
 </div>
 
@@ -297,71 +297,75 @@ wp_reset_postdata(); // Сбрасываем $post
 ?>
 
 <div class="container">
-    <section class="news">
-        <ul class="news-list">
-            <?php		
-                global $post;
+    <div class="frontpage-bottom">
+        <section class="news">
+            <ul class="news-list">
+                <?php		
+                    global $post;
 
-                $query = new WP_Query( [
-                    'posts_per_page' => 6,
-                ] );
+                    $query = new WP_Query( [
+                        'posts_per_page' => 6,
+                    ] );
 
-                if ( $query->have_posts() ) {
-                    while ( $query->have_posts() ) {
-                        $query->the_post();
+                    if ( $query->have_posts() ) {
+                        while ( $query->have_posts() ) {
+                            $query->the_post();
+                            ?>
+                            <!-- Вывода постов, функции цикла: the_title() и т.д. -->
+
+
+
+                            <li class="news-item" >
+                            <img src="<?php echo get_the_post_thumbnail_url()?>" alt="news-img" class="news-img">
+                            <div class="news-info">
+                                    <span class="news-category-name"> 
+                                    <?php 
+                            foreach (get_the_category() as $category) {
+                                printf(
+                                    '<a href="%s" class="category-link %s">%s</a>',
+                                    esc_url( get_category_link( $category ) ),
+                                    esc_html( $category -> slug ),
+                                    esc_html( $category -> name ),
+                                        );
+                                    }
+                                    ?>
+                                    </span> 
+                                    <h4 class="news-title"> <?php the_title()?></h4>
+                                    <p class="news-excerpt"> 
+                                        <?php echo mb_strimwidth(get_the_excerpt(), 0, 160, '...') ?> 
+                                    </p>
+                                    <div class="news-feedback">
+                                        <span class="date"><?php the_time( 'j F' );?></span>
+                                        <div class="comments">   
+                                        <img src="<?php echo get_template_directory_uri(  ) . './assets/images/comment.svg' ?>" alt="icon: comment" class="comments-icon">
+                                            <span class="comments-counter"> <?php comments_number('0', '1', '%')  ?> </span>  
+                                        </div>
+                                        <div class="likes">
+                                        <img src="<?php echo get_template_directory_uri() . '/assets/images/heart-grey.svg' ?>" alt="icon: like" class="likes-icon">
+                                            <span class="likes-counter"><?php comments_number('0', '1', '%') ?> </span>
+                                        </div> 
+                                    </div>
+                            </div>
+                            </li>
+
+
+
+                            <?php 
+                        }
+                    } else {
                         ?>
                         <!-- Вывода постов, функции цикла: the_title() и т.д. -->
-
-
-
-                        <li class="news-item" >
-                           <img src="<?php echo get_the_post_thumbnail_url()?>" alt="news-img" class="news-img">
-                           <div class="news-info">
-                                <span class="news-category-name"> 
-                                <?php 
-                        foreach (get_the_category() as $category) {
-                            printf(
-                                '<a href="%s" class="category-link %s">%s</a>',
-                                esc_url( get_category_link( $category ) ),
-                                esc_html( $category -> slug ),
-                                esc_html( $category -> name ),
-                                    );
-                                }
-                                ?>
-                                </span> 
-                                <h4 class="news-title"> <?php the_title()?></h4>
-                                <p class="news-excerpt"> 
-                                    <?php echo mb_strimwidth(get_the_excerpt(), 0, 160, '...') ?> 
-                                </p>
-                                <div class="news-feedback">
-                                    <span class="date"><?php the_time( 'j F' );?></span>
-                                    <div class="comments">   
-                                    <img src="<?php echo get_template_directory_uri(  ) . './assets/images/comment.svg' ?>" alt="icon: comment" class="comments-icon">
-                                        <span class="comments-counter"> <?php comments_number('0', '1', '%')  ?> </span>  
-                                    </div>
-                                    <div class="likes">
-                                    <img src="<?php echo get_template_directory_uri() . '/assets/images/heart-grey.svg' ?>" alt="icon: like" class="likes-icon">
-                                        <span class="likes-counter"><?php comments_number('0', '1', '%') ?> </span>
-                                    </div> 
-                                </div>
-                           </div>
-                        </li>
-
-
-
-                        <?php 
+                        <p>Постов не найдено</p>
+                        <?php  
                     }
-                } else {
-                    ?>
-                    <!-- Вывода постов, функции цикла: the_title() и т.д. -->
-                    <p>Постов не найдено</p>
-                    <?php  
-                }
 
-                wp_reset_postdata(); // Сбрасываем $post
-            ?>
-        </ul>
-    </section>
+                    wp_reset_postdata(); // Сбрасываем $post
+                ?>
+            </ul>
+        </section>
+        <!-- подключаем нижний сайдбар -->
+        <?php get_sidebar('home-bottom'); ?>
+    </div>
 </div>
 
 
