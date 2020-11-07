@@ -458,6 +458,10 @@ body {
   align-items: center;
 }
 
+.article-grid-item-1 .article-grid-info .comments-icon {
+  fill: #BCBFC2;
+}
+
 .article-grid-item-1 .article-grid-info .comments-counter {
   color: #939699;
   font-size: 12px;
@@ -922,4 +926,29 @@ h4, p {
 
 .news-feedback .likes-icon {
   margin-right: 7px;
+}
+
+.special {
+  background-color: #262d33;
+  padding: 60px 0;
+}
+
+.special-grid {
+  display: flex;
+  justify-content: space-between;
+}
+
+.photo-report {
+  min-height: 570px;
+  width: 49%;
+  border: 1px solid red;
+}
+
+.photo-report-button {
+  fill: #fff;
+}
+
+.other {
+  width: 49%;
+  border: 1px solid red;
 }
