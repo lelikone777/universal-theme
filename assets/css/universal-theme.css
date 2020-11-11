@@ -931,6 +931,7 @@ h4, p {
 .special {
   background-color: #262d33;
   padding: 60px 0;
+  color: #fff;
 }
 
 .special-grid {
@@ -942,10 +943,118 @@ h4, p {
   min-height: 570px;
   width: 49%;
   border: 1px solid red;
+  position: relative;
+}
+
+.photo-report .category-link {
+  color: #fff;
+  border-radius: 3px;
+  background: #3dc47e;
+  font-size: 12px;
+  line-height: 15px;
+  align-self: start;
+  text-transform: none;
+  padding: 5px 12px;
+  position: absolute;
+  left: 18px;
+  top: 18px;
+}
+
+.photo-report .author {
+  text-align: center;
+  text-decoration: none;
+}
+
+.photo-report .author-name {
+  display: block;
+  font-size: 14px;
+  line-height: 20px;
+  color: #fff;
+}
+
+.photo-report .author-rank {
+  font-size: 12px;
+  line-height: 15px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.photo-report .author-avatar {
+  border-radius: 50%;
+  width: 45%;
+  height: 45%;
+  margin-bottom: 8px;
+}
+
+.photo-report::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(64, 48, 61, 0.35), rgba(64, 48, 61, 0.35));
+  z-index: 1;
 }
 
 .photo-report-button {
+  color: #fff;
+  background: #4592ff;
+  border-radius: 20px;
+  padding: 10px 20px;
+  text-decoration: none;
   fill: #fff;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.photo-report-button::hover {
+  color: #fff;
+}
+
+.photo-report-counter {
+  margin-left: 8px;
+}
+
+.photo-report-icon {
+  margin-right: 8px;
+}
+
+.photo-report-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 18px;
+  height: 100%;
+  text-align: center;
+}
+
+.photo-report-slider {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.photo-report-slider .swiper-slide {
+  height: 100%;
+}
+
+.photo-report-slider .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-report-title {
+  font-family: Roboto Slab;
+  font-size: 40px;
+  line-height: 50px;
 }
 
 .other {

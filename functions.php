@@ -117,19 +117,23 @@ class Downloader_Widget extends WP_Widget {
         $link = @ $instance['link'] ?: 'https://some-link.ru';
 
 		?>
-		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Заголовок:' ); ?></label> 
-			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
-		</p>
-        <p>
-			<label for="<?php echo $this->get_field_id( 'description' ); ?>"><?php _e( 'Описание:' ); ?></label> 
-			<input class="widefat" id="<?php echo $this->get_field_id( 'description' ); ?>" name="<?php echo $this->get_field_name( 'description' ); ?>" type="text" value="<?php echo esc_attr( $description ); ?>">
-		</p>
-        <p>
-			<label for="<?php echo $this->get_field_id( 'link' ); ?>"><?php _e( 'Ссылка на файл:' ); ?></label> 
-			<input class="widefat" id="<?php echo $this->get_field_id( 'link' ); ?>" name="<?php echo $this->get_field_name( 'link' ); ?>" type="text" value="<?php echo esc_attr( $link ); ?>">
-		</p>
-		<?php 
+<p>
+    <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Заголовок:' ); ?></label>
+    <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>"
+        name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+</p>
+<p>
+    <label for="<?php echo $this->get_field_id( 'description' ); ?>"><?php _e( 'Описание:' ); ?></label>
+    <input class="widefat" id="<?php echo $this->get_field_id( 'description' ); ?>"
+        name="<?php echo $this->get_field_name( 'description' ); ?>" type="text"
+        value="<?php echo esc_attr( $description ); ?>">
+</p>
+<p>
+    <label for="<?php echo $this->get_field_id( 'link' ); ?>"><?php _e( 'Ссылка на файл:' ); ?></label>
+    <input class="widefat" id="<?php echo $this->get_field_id( 'link' ); ?>"
+        name="<?php echo $this->get_field_name( 'link' ); ?>" type="text" value="<?php echo esc_attr( $link ); ?>">
+</p>
+<?php 
 	}
 
 	/**
@@ -168,10 +172,12 @@ class Downloader_Widget extends WP_Widget {
 		if( ! apply_filters( 'show_my_widget_style', true, $this->id_base ) )
 			return;
 		?>
-		<style type="text/css">
-			.my_widget a{ display:inline; }
-		</style>
-		<?php
+<style type="text/css">
+.my_widget a {
+    display: inline;
+}
+</style>
+<?php
 	}
 
 } 
@@ -249,23 +255,30 @@ class Social_Widget extends WP_Widget {
 		$youtube = @ $instance['youtube'] ?: 'https://www.youtube.com/';
        
 		?>
-		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Заголовок:' ); ?></label> 
-			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
-		</p>
-        <p>
-			<label for="<?php echo $this->get_field_id( 'facebook' ); ?>"><?php _e( 'Страница фейсбук:' ); ?></label> 
-			<input class="widefat" id="<?php echo $this->get_field_id( 'facebook' ); ?>" name="<?php echo $this->get_field_name( 'facebook' ); ?>" type="text" value="<?php echo esc_attr( $facebook ); ?>">
-		</p>
-		<p>
-			<label for="<?php echo $this->get_field_id( 'twitter' ); ?>"><?php _e( 'Страница твиттер:' ); ?></label> 
-			<input class="widefat" id="<?php echo $this->get_field_id( 'twitter' ); ?>" name="<?php echo $this->get_field_name( 'twitter' ); ?>" type="text" value="<?php echo esc_attr( $twitter ); ?>">
-		</p>
-		<p>
-			<label for="<?php echo $this->get_field_id( 'youtube' ); ?>"><?php _e( 'Страница youtube:' ); ?></label> 
-			<input class="widefat" id="<?php echo $this->get_field_id( 'youtube' ); ?>" name="<?php echo $this->get_field_name( 'youtube' ); ?>" type="text" value="<?php echo esc_attr( $youtube ); ?>">
-		</p>
-		<?php 
+<p>
+    <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Заголовок:' ); ?></label>
+    <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>"
+        name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+</p>
+<p>
+    <label for="<?php echo $this->get_field_id( 'facebook' ); ?>"><?php _e( 'Страница фейсбук:' ); ?></label>
+    <input class="widefat" id="<?php echo $this->get_field_id( 'facebook' ); ?>"
+        name="<?php echo $this->get_field_name( 'facebook' ); ?>" type="text"
+        value="<?php echo esc_attr( $facebook ); ?>">
+</p>
+<p>
+    <label for="<?php echo $this->get_field_id( 'twitter' ); ?>"><?php _e( 'Страница твиттер:' ); ?></label>
+    <input class="widefat" id="<?php echo $this->get_field_id( 'twitter' ); ?>"
+        name="<?php echo $this->get_field_name( 'twitter' ); ?>" type="text"
+        value="<?php echo esc_attr( $twitter ); ?>">
+</p>
+<p>
+    <label for="<?php echo $this->get_field_id( 'youtube' ); ?>"><?php _e( 'Страница youtube:' ); ?></label>
+    <input class="widefat" id="<?php echo $this->get_field_id( 'youtube' ); ?>"
+        name="<?php echo $this->get_field_name( 'youtube' ); ?>" type="text"
+        value="<?php echo esc_attr( $youtube ); ?>">
+</p>
+<?php 
 	}
 
 	/**
@@ -305,10 +318,12 @@ class Social_Widget extends WP_Widget {
 		if( ! apply_filters( 'show_my_widget_style', true, $this->id_base ) )
 			return;
 		?>
-		<style type="text/css">
-			.my_widget a{ display:inline; }
-		</style>
-		<?php
+<style type="text/css">
+.my_widget a {
+    display: inline;
+}
+</style>
+<?php
 	}
 
 } 
@@ -368,9 +383,9 @@ class Recent_Posts_Widget extends WP_Widget {
 				foreach ( $postslist as $post ){
 					setup_postdata($post);
 					?>
-					<a href="<?php the_permalink() ?>" class="recent-post-link">
+<a href="<?php the_permalink() ?>" class="recent-post-link">
 
-					<img src="<?php 
+    <img src="<?php 
                                 if( has_post_thumbnail() ) {
                                     echo get_the_post_thumbnail_url(null,'thumbnail');
                                 }
@@ -379,20 +394,20 @@ class Recent_Posts_Widget extends WP_Widget {
                                 } 
                                 ?>" class="recent-post-thumb" alt="post-thumb">
 
-						
-					
-					
-					
-						<div class="recent-post-info">
-							<h4 class="recent-post-title"><?php echo mb_strimwidth(get_the_title(), 0, 35, '...')?></h4>
-							<span class="recent-post-time">						
-								<?php $time_diff = human_time_diff( get_post_time('U'), current_time('timestamp') );
+
+
+
+
+    <div class="recent-post-info">
+        <h4 class="recent-post-title"><?php echo mb_strimwidth(get_the_title(), 0, 35, '...')?></h4>
+        <span class="recent-post-time">
+            <?php $time_diff = human_time_diff( get_post_time('U'), current_time('timestamp') );
 								echo "$time_diff назад";
 								//> Опубликовано 5 лет назад. ?>
-							</span>
-						</div>
-					</a>
-					<?php
+        </span>
+    </div>
+</a>
+<?php
 				}
 				wp_reset_postdata();
 				echo '</div>';
@@ -410,15 +425,17 @@ class Recent_Posts_Widget extends WP_Widget {
         $count = @ $instance['count'] ?: '7';
 
 		?>
-		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Заголовок:' ); ?></label> 
-			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
-		</p>
-        <p>
-			<label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e( 'Количество постов:' ); ?></label> 
-			<input class="widefat" id="<?php echo $this->get_field_id( 'count' ); ?>" name="<?php echo $this->get_field_name( 'count' ); ?>" type="text" value="<?php echo esc_attr( $count ); ?>">
-		</p>
-		<?php 
+<p>
+    <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Заголовок:' ); ?></label>
+    <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>"
+        name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+</p>
+<p>
+    <label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e( 'Количество постов:' ); ?></label>
+    <input class="widefat" id="<?php echo $this->get_field_id( 'count' ); ?>"
+        name="<?php echo $this->get_field_name( 'count' ); ?>" type="text" value="<?php echo esc_attr( $count ); ?>">
+</p>
+<?php 
 	}
 
 	/**
@@ -455,10 +472,12 @@ class Recent_Posts_Widget extends WP_Widget {
 		if( ! apply_filters( 'show_my_widget_style', true, $this->id_base ) )
 			return;
 		?>
-		<style type="text/css">
-			.my_widget a{ display:inline; }
-		</style>
-		<?php
+<style type="text/css">
+.my_widget a {
+    display: inline;
+}
+</style>
+<?php
 	}
 
 } 
@@ -482,8 +501,8 @@ add_action( 'widgets_init', 'register_recent_posts_widget' );
 //подключаем стили и шрифты
 function enqueue_universal_style() {
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
-	wp_enqueue_style( 'universal-theme', get_template_directory_uri() . '/assets/css/universal-theme.css', 'style');
 	wp_enqueue_style( 'swiper-slider', get_template_directory_uri() . '/assets/css/swiper-bundle.min.css', 'style');
+	wp_enqueue_style( 'universal-theme', get_template_directory_uri() . '/assets/css/universal-theme.css', 'style');
 	wp_enqueue_style( 'Roboto-Slab', '//fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
 	wp_enqueue_script( 'swiper', get_template_directory_uri() . '/assets/js/swiper-bundle.min.js', null, time(), true);
 	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/assets/js/scripts.js', 'swiper', time(), true);
