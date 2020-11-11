@@ -488,7 +488,7 @@ wp_reset_postdata(); // Сбрасываем $post
                             </use>
                         </svg>
                         Смотреть фото
-                        <span class="photo-report-counter"></span>
+                        <span class="photo-report-counter"><?php echo count($images) ?></span>
                     </a>
                 </div>
 
