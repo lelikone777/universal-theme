@@ -308,29 +308,29 @@ global $post;
 $query = new WP_Query( [
     'posts_per_page' => 1,
     'category_name' => 'investigation',
-] );
+    ] );
 
-if ( $query->have_posts() ) {
-	while ( $query->have_posts() ) {
-		$query->the_post();
-		?>
-<!-- Вывода постов, функции цикла: the_title() и т.д. -->
-<section class="investigation" style="background: linear-gradient(0deg, rgba(64, 48, 61, 0.35), rgba(64, 48, 61, 0.35)), url(<?php if( has_post_thumbnail() ) {
-                                    echo get_the_post_thumbnail_url();
-                                }
-                                else {
-                                    echo get_template_directory_uri().'/assets/images/img-default.png';
-                                } ;?>) no-repeat center center">
-    <div class="container">
-        <h2 class="investigation-title"><?php the_title(); ?> </h2>
-        <a href="<?php echo get_the_permalink() ?>" class="more">Читать статью</a>
-    </div>
-</section>
-<?php 
-	}
-} else {
+        if ( $query->have_posts() ) {
+            while ( $query->have_posts() ) {
+                $query->the_post();
+                ?>
+            <!-- Вывода постов, функции цикла: the_title() и т.д. -->
+            <section class="investigation" style="background: linear-gradient(0deg, rgba(64, 48, 61, 0.35), rgba(64, 48, 61, 0.75)), url(<?php if( has_post_thumbnail() ) {
+                    echo get_the_post_thumbnail_url();
+                }
+                else {
+                    echo get_template_directory_uri().'/assets/images/img-default.png';
+                } ;?>) no-repeat center center; background-size: cover">
+                <div class="container">
+                    <h2 class="investigation-title"><?php the_title(); ?> </h2>
+                    <a href="<?php echo get_the_permalink() ?>" class="more">Читать статью</a>
+                </div>
+            </section>
+        <?php 
+	    }
+    } else {
 	// Постов не найдено
-}
+    }
 
 wp_reset_postdata(); // Сбрасываем $post
 ?>
@@ -367,6 +367,9 @@ wp_reset_postdata(); // Сбрасываем $post
                                 ?>" class="news-img">
                     <!-- </a> -->
                     <div class="news-info">
+                        <svg class="icon news-icon" width="20" height="20" fill="#BCBFC2">
+                            <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#bookmark"></use>
+                        </svg>
                         <span class="news-category-name">
                             <?php 
                             foreach (get_the_category() as $category) {

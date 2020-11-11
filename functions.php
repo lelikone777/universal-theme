@@ -370,7 +370,7 @@ class Recent_Posts_Widget extends WP_Widget {
 	 */
 	function widget( $args, $instance ) {
 		$title = $instance['title'];
-        $count = $instance['count'];
+		$count = $instance['count'];
 
 		echo $args['before_widget'];
 		if ( ! empty( $count ) ) {
@@ -383,36 +383,36 @@ class Recent_Posts_Widget extends WP_Widget {
 				foreach ( $postslist as $post ){
 					setup_postdata($post);
 					?>
-<a href="<?php the_permalink() ?>" class="recent-post-link">
+					<a href="<?php the_permalink() ?>" class="recent-post-link">
 
-    <img src="<?php 
-                                if( has_post_thumbnail() ) {
-                                    echo get_the_post_thumbnail_url(null,'thumbnail');
-                                }
-                                else {
-                                    echo get_template_directory_uri().'/assets/images/img-default.png';
-                                } 
-                                ?>" class="recent-post-thumb" alt="post-thumb">
-
-
+						<img src="<?php 
+													if( has_post_thumbnail() ) {
+														echo get_the_post_thumbnail_url(null,'thumbnail');
+													}
+													else {
+														echo get_template_directory_uri().'/assets/images/img-default.png';
+													} 
+													?>" class="recent-post-thumb" alt="post-thumb">
 
 
 
-    <div class="recent-post-info">
-        <h4 class="recent-post-title"><?php echo mb_strimwidth(get_the_title(), 0, 35, '...')?></h4>
-        <span class="recent-post-time">
-            <?php $time_diff = human_time_diff( get_post_time('U'), current_time('timestamp') );
-								echo "$time_diff назад";
-								//> Опубликовано 5 лет назад. ?>
-        </span>
-    </div>
-</a>
-<?php
+
+
+						<div class="recent-post-info">
+							<h4 class="recent-post-title"><?php echo mb_strimwidth(get_the_title(), 0, 35, '...')?></h4>
+							<span class="recent-post-time">
+								<?php $time_diff = human_time_diff( get_post_time('U'), current_time('timestamp') );
+													echo "$time_diff назад";
+													//> Опубликовано 5 лет назад. ?>
+							</span>
+						</div>
+					</a>
+				<?php
 				}
 				wp_reset_postdata();
-				echo '</div>';
+				echo '</div> <p class="read-more">Read more</p>';
 		}
-		echo $args['after_widget'];
+		echo $args['after_widget']; 
 	}
 
 	/**

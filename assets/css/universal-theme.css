@@ -802,6 +802,17 @@ body {
   margin: 0;
 }
 
+.read-more {
+  border-top: 1px solid #D9DADB;
+  font-family: 'Lato black';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  padding: 11px 0 14px;
+}
+
 .investigation {
   padding: 50px 0 55px;
   text-align: center;
@@ -868,6 +879,14 @@ h4, p {
   justify-content: space-between;
   padding: 30px 25px;
   align-items: flex-start;
+  position: relative;
+}
+
+.news-icon {
+  position: absolute;
+  fill: #BCBFC2;
+  right: 25px;
+  top: 25px;
 }
 
 .news-category-name {
@@ -876,6 +895,10 @@ h4, p {
   line-height: 15px;
   text-transform: uppercase;
   color: #4592FF;
+}
+
+.news-category-name .photo-report::before {
+  background: none;
 }
 
 .news-title {
@@ -888,7 +911,7 @@ h4, p {
 }
 
 .news-excerpt {
-  font-family: Lato;
+  font-family: "Lato regular";
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -993,7 +1016,7 @@ h4, p {
   top: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(0deg, rgba(64, 48, 61, 0.35), rgba(64, 48, 61, 0.35));
+  background: linear-gradient(0deg, rgba(64, 48, 61, 0.35), rgba(64, 48, 61, 0.75));
   z-index: 1;
 }
 

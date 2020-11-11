@@ -33,12 +33,20 @@ h4, p
         justify-content: space-between
         padding: 30px 25px
         align-items: flex-start
+        position: relative
+    &-icon
+        position: absolute
+        fill: #BCBFC2
+        right: 25px
+        top: 25px
     &-category-name
         font-weight: 900
         font-size: 12px
         line-height: 15px
         text-transform: uppercase
         color: #4592FF
+        .photo-report::before
+            background: none
     &-title
         font-family: Roboto Slab
         font-style: normal
@@ -47,7 +55,7 @@ h4, p
         line-height: 25px
         color: #262D33
     &-excerpt
-        font-family: Lato
+        font-family: "Lato regular"
         font-style: normal
         font-weight: normal
         font-size: 14px
