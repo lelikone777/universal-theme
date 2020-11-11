@@ -272,6 +272,7 @@ body {
   font-size: 12px;
   line-height: 15px;
   text-decoration: none;
+  margin-right: 10px;
 }
 
 .category-link:visited {
@@ -1081,7 +1082,27 @@ h4, p {
   line-height: 50px;
 }
 
-.other {
+.career {
   width: 49%;
   border: 1px solid red;
+}
+
+.career-grid {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 2fr 1fr;
+  grid-row-gap: 30px;
+  list-style: none;
+}
+
+.career-grid-item-1 {
+  grid-area: 1 / 1 / 2 / 3;
+}
+
+.career-grid-item-2 {
+  grid-area: 2 / 1 / 3 / 2;
 }
