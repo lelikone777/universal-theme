@@ -10,7 +10,7 @@
         list-style: none
         display: grid
         grid-template-columns: repeat(3, 1fr)
-        grid-template-rows: minmax(min-content, max-content) repeat(2, minmax(200px, max-content))
+        grid-template-rows: minmax(min-content, max-content) repeat(2, minmax(min-content, max-content))
         grid-gap: 30px
         &-permalink
             text-decoration: none
@@ -20,7 +20,6 @@
         &-item
             border-radius: 10px
             background-color: #fff
-            overflow: hidden
             &-1
                 grid-area: 1 / 1 / 2 / 3
                 padding: 35px 35px 53px 35px
@@ -171,6 +170,7 @@
                         margin-left: 5px
             &-3
                 grid-area: 2 / 1 / 4 / 2
+                max-height: 390px
                 .article
                     &-thumb
                         height: 275px
@@ -187,7 +187,9 @@
                             margin: 0
             &-default
                 position: relative
-                max-height: 170px
+                display: flex
+                flex-direction: column
+                justify-content: space-between
                 .article
                     &-grid
                         &-permalink

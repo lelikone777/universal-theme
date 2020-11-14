@@ -365,7 +365,7 @@ body {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: minmax(min-content, max-content) repeat(2, minmax(200px, max-content));
+  grid-template-rows: minmax(min-content, max-content) repeat(2, minmax(min-content, max-content));
   grid-gap: 30px;
 }
 
@@ -381,7 +381,6 @@ body {
 .article-grid-item {
   border-radius: 10px;
   background-color: #fff;
-  overflow: hidden;
 }
 
 .article-grid-item-1 {
@@ -577,6 +576,7 @@ body {
 
 .article-grid-item-3 {
   grid-area: 2 / 1 / 4 / 2;
+  max-height: 390px;
 }
 
 .article-grid-item-3 .article-thumb {
@@ -597,7 +597,9 @@ body {
 
 .article-grid-item-default {
   position: relative;
-  max-height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .article-grid-item-default .article-grid-permalink {
@@ -1108,8 +1110,9 @@ h4, p {
 .career-grid-image {
   position: absolute;
   width: 555px;
-  height: 100%;
+  height: 370px;
   z-index: 0;
+  right: 0;
 }
 
 .career-grid-button {

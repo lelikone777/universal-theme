@@ -277,7 +277,7 @@
                         default: ?>
             <li class="article-grid-item article-grid-item-default">
                 <a href="<?php the_permalink()?>" class="article-grid-permalink">
-                    <h4 class="article-grid-title"> <?php echo mb_strimwidth(get_the_title(), 0, 50, '...')?> </h4>
+                    <h4 class="article-grid-title"> <?php echo mb_strimwidth(get_the_title(), 0, 40, '...')?> </h4>
                     <p class="article-grid-excerpt"><?php echo mb_strimwidth(get_the_excerpt(), 0, 44, '...') ?> </p>
                     <span class="article-date"><?php the_time( 'j F' );?></span>
                 </a>
@@ -545,11 +545,13 @@ wp_reset_postdata(); // Сбрасываем $post
                                     break;
                                 case '2':
                                     ?> 
-                                    <a class="career-grid-permalink" href="<?php echo get_the_permalink();?>">  
+                                   
                                     <li class="career-grid-item career-grid-item-2">
+                                     <a class="career-grid-permalink" href="<?php echo get_the_permalink();?>">  
                                         <h4><?php the_title()?></h4>
                                         <p><?php echo mb_strimwidth(get_the_excerpt(), 0, 50, '...') ?></p>
                                         <span class="article-date"><?php the_time( 'j F' );?></span>
+                                    </a>
                                     </li>
 
                                     <?php
@@ -557,11 +559,13 @@ wp_reset_postdata(); // Сбрасываем $post
                                 case '3':
                                     ?>
 
-                                    <a class="career-grid-permalink" href="<?php echo get_the_permalink();?>">  
+                                    
                                     <li class="career-grid-item career-grid-item-3">
+                                    <a class="career-grid-permalink" href="<?php echo get_the_permalink();?>">  
                                         <h4><?php the_title()?></h4>
                                         <p><?php echo mb_strimwidth(get_the_excerpt(), 0, 50, '...') ?></p>
                                         <span class="article-date"><?php the_time( 'j F' );?></span>
+                                    </a>
                                     </li>
                                     
                                     <?php
