@@ -628,8 +628,9 @@ body {
   margin-bottom: auto;
 }
 
-.article-date {
+.article-grid-item-default .article-grid-date {
   color: #939699;
+  align-self: start;
 }
 
 body {
@@ -708,6 +709,10 @@ body {
   line-height: 20px;
   margin: 0;
   border: 1px solid #000;
+}
+
+.widget p {
+  margin-top: 10px;
 }
 
 .widget-recent-posts-wrapper {
@@ -1186,4 +1191,71 @@ h4, p {
   line-height: 20px;
   color: #4B5157;
   margin-bottom: 10px;
+}
+
+.career-grid-item-2 span, .career-grid-item-3 span {
+  color: #939699;
+}
+
+.footer {
+  padding: 60px 0 55px;
+  background-color: #fff;
+}
+
+.footer-menu {
+  border-top: 3px solid #000;
+}
+
+.footer-menu:nth-child(1) {
+  border-top: 3px solid #FF4F52;
+}
+
+.footer-menu:nth-child(2) {
+  border-top: 3px solid #AC8EE3;
+}
+
+.footer-menu:nth-child(3) {
+  border-top: 3px solid #4592ff;
+}
+
+.footer-menu:nth-child(4) {
+  border-top: 3px solid #FFA34D;
+}
+
+.footer-menu:nth-child(5) {
+  border-top: 3px solid #3DC47E;
+}
+
+.footer-menu:nth-child(6) {
+  border-top: 3px solid #6E99AE;
+}
+
+.footer-menu-bar {
+  display: flex;
+  align-items: flex-start;
+}
+
+.footer-menu-title {
+  font-family: 'Lato black', sans-serif;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 25px;
+  margin-top: 30px;
+}
+
+.footer-menu ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  padding-right: 40px;
+}
+
+.footer-menu ul a {
+  text-decoration: none;
+  display: inline-block;
+  color: #4B5157;
+  margin: 0 0 15px;
+  font-size: 14px;
+  line-height: 20px;
 }

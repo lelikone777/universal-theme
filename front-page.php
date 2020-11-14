@@ -279,7 +279,7 @@
                 <a href="<?php the_permalink()?>" class="article-grid-permalink">
                     <h4 class="article-grid-title"> <?php echo mb_strimwidth(get_the_title(), 0, 40, '...')?> </h4>
                     <p class="article-grid-excerpt"><?php echo mb_strimwidth(get_the_excerpt(), 0, 44, '...') ?> </p>
-                    <span class="article-date"><?php the_time( 'j F' );?></span>
+                    <span class="article-grid-date"><?php the_time( 'j F' );?></span>
                 </a>
             </li>
             <?php
@@ -585,7 +585,4 @@ wp_reset_postdata(); // Сбрасываем $post
 </div>
 
 
-
-<div class="container">
-    <?php wp_footer();?>
-</div>
+<?php get_footer();?>

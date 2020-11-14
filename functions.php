@@ -40,9 +40,6 @@ function universal_example_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
-}
-add_action( 'widgets_init', 'universal_example_widgets_init' );
-
 	register_sidebar(
 		array(
 			'name'          => esc_html__( 'Сайдбар на главной странице снизу', 'universal-theme' ),
@@ -54,7 +51,19 @@ add_action( 'widgets_init', 'universal_example_widgets_init' );
 			'after_title'   => '</h2>',
 		)
 	);
-	
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Меню в подвале', 'universal-theme' ),
+			'id'            => 'sidebar-footer',
+			'description'   => esc_html__( 'Добавьте меню сюда.', 'universal-theme' ),
+			'before_widget' => '<section id="%1$s" class="footer-menu %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="footer-menu-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+}
+
 add_action( 'widgets_init', 'universal_example_widgets_init' );
 
 
