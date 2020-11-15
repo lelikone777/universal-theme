@@ -1032,7 +1032,7 @@ h4, p {
 }
 
 .news {
-  display: flex;
+  width: 74%;
   border-radius: 10px;
   background-color: #fff;
   margin-bottom: 60px;
@@ -1140,6 +1140,15 @@ h4, p {
 
 .news-feedback .likes-icon {
   margin-right: 7px;
+}
+
+@media screen and (max-width: 1200px) {
+  .news {
+    width: 67%;
+  }
+  .news-item {
+    height: 300px;
+  }
 }
 
 .special {
