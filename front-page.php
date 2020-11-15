@@ -278,7 +278,7 @@
             <li class="article-grid-item article-grid-item-default">
                 <a href="<?php the_permalink()?>" class="article-grid-permalink">
                     <h4 class="article-grid-title"> <?php echo mb_strimwidth(get_the_title(), 0, 40, '...')?> </h4>
-                    <p class="article-grid-excerpt"><?php echo mb_strimwidth(get_the_excerpt(), 0, 44, '...') ?> </p>
+                    <p class="article-grid-excerpt"><?php echo mb_strimwidth(get_the_excerpt(), 0, 75, '...') ?> </p>
                     <span class="article-grid-date"><?php the_time( 'j F' );?></span>
                 </a>
             </li>

@@ -2,15 +2,18 @@
     display: flex
     justify-content: space-between
     align-items: flex-start
+    padding-top: 30px
+    padding-bottom: 30px
 .article
     &-grid
-        max-width: 850px
-        margin: 30px 0 60px
+        width: 74%
+        margin: 0 0 30px
         padding: 0
         list-style: none
         display: grid
-        grid-template-columns: repeat(3, 1fr)
-        grid-template-rows: minmax(min-content, max-content) repeat(2, minmax(min-content, max-content))
+        grid-template-columns: repeat(auto-fit, minmax(30%, 1fr))
+        grid-template-rows: repeat(3, minmax(200px, max-content))
+        grid-auto-rows: minmax(200px, max-content)
         grid-gap: 30px
         &-permalink
             text-decoration: none
@@ -20,6 +23,7 @@
         &-item
             border-radius: 10px
             background-color: #fff
+            overflow: hidden
             &-1
                 grid-area: 1 / 1 / 2 / 3
                 padding: 35px 35px 53px 35px
@@ -32,13 +36,6 @@
                     text-transform: uppercase
                     color: #6E99AE
                 .article-grid
-                    // &-thumb
-                    //     position: absolute
-                    //     right: 0
-                    //     top: 0
-                    //     width: 40%
-                    //     height: 100%
-                    //     object-fit: cover
                     &-title
                         width: 90%
                         font-family: Roboto Slab
@@ -58,7 +55,7 @@
                         bottom: 0
                         left: 0
                         right: 0
-                        padding: 20px 35px
+                        padding: 15px 35px
                         border-top: 1px solid #D9DADB
                         background-color: #fff
                         display: flex
@@ -109,6 +106,7 @@
                         left: 0
                         top: 0
                         object-fit: cover
+                        z-index: -1
                     &-permalink
                         position: absolute
                         left: 0
@@ -170,7 +168,6 @@
                         margin-left: 5px
             &-3
                 grid-area: 2 / 1 / 4 / 2
-                max-height: 390px
                 .article
                     &-thumb
                         height: 275px
@@ -196,7 +193,7 @@
                             padding: 25px 25px 30px
                             position: absolute
                             width: 100%
-                            max-height: 100%
+                            height: 100%
                             display: flex
                             flex-direction: column
                             justify-content: space-between
@@ -210,9 +207,36 @@
                             margin: 0
                             margin-bottom: 5px
                         &-excerpt
-                            margin: 0
+                            margin-top: 0
                             margin-bottom: auto
                         &-date
                             color: #939699
                             align-self: start
+
+@media screen and ( max-width: 1200px )
+    .article
+        &-grid
+            grid-template-columns: repeat(auto-fit, minmax(40%, 1fr))
+
+@media screen and ( max-width: 1024px )
+    .article
+        &-grid
+            width: 65%
+            grid-template-columns: 1fr
+            grid-template-rows: repeat(3, minmax(300px, max-content))
+            &-item
+                grid-area: auto
+                .tag
+                    margin-bottom: 30px
+
+@media screen and ( max-width: 960px )
+    .main
+        &-grid
+            flex-wrap: wrap
+    .article
+        &-grid
+            width: 100%
+    
+
+
 
