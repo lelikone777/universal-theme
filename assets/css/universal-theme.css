@@ -1572,3 +1572,11 @@ h4, p {
     align-items: center;
   }
 }
+
+@media screen and (max-width: 430px) {
+  .footer-nav {
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-around;
+  }
+}

@@ -20,7 +20,7 @@
                 );
                 $args = array(
                     'before_widget' => '<div class="footer-social">',
-                    'after_widget' => '</div>',
+                    'after_widget' =>  '</div>',
                 );
                 the_widget( 'Social_Widget', $instance, $args );
             ?>

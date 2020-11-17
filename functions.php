@@ -247,7 +247,6 @@ class Social_Widget extends WP_Widget {
 		$facebook = $instance['facebook'];
 		$twitter = $instance['twitter'];
 		$youtube = $instance['youtube'];
-		$instagram = $instance['instagram'];
 
 		echo $args['before_widget'];
 		if ( ! empty( $title ) ) {
@@ -261,9 +260,6 @@ class Social_Widget extends WP_Widget {
 		}
 		if ( ! empty( $youtube ) ) {
             echo '<a class="widget-social-icon" target="blanc" href="' . $youtube . '"><img src="' . get_template_directory_uri(). '/assets/images/youtube.svg" ></a></div>';
-		}
-		if ( ! empty( $instagram ) ) {
-            echo '<a class="widget-social-icon" target="blanc" href="' . $instagram . '"><img src="' . get_template_directory_uri(). '/assets/images/insta.svg" ></a></div>';
         }
 		echo $args['after_widget'];
 	}
@@ -277,7 +273,6 @@ class Social_Widget extends WP_Widget {
 		$facebook = @ $instance['facebook'] ?: 'https://www.facebook.com/';
 		$twitter = @ $instance['twitter'] ?: 'https://www.twitter.com/';
 		$youtube = @ $instance['youtube'] ?: 'https://www.youtube.com/';
-		$instagram = @ $instance['instagram'] ?: 'https://www.instagram.com/';
        
 		?>
 <p>
@@ -303,12 +298,6 @@ class Social_Widget extends WP_Widget {
         name="<?php echo $this->get_field_name( 'youtube' ); ?>" type="text"
         value="<?php echo esc_attr( $youtube ); ?>">
 </p>
-<p>
-    <label for="<?php echo $this->get_field_id( 'instagram' ); ?>"><?php _e( 'Страница instagram:' ); ?></label>
-    <input class="widefat" id="<?php echo $this->get_field_id( 'instagram' ); ?>"
-        name="<?php echo $this->get_field_name( 'instagram' ); ?>" type="text"
-        value="<?php echo esc_attr( $instagram ); ?>">
-</p>
 <?php 
 	}
 
@@ -328,7 +317,6 @@ class Social_Widget extends WP_Widget {
         $instance['facebook'] = ( ! empty( $new_instance['facebook'] ) ) ? strip_tags( $new_instance['facebook'] ) : '';
 		$instance['twitter'] = ( ! empty( $new_instance['twitter'] ) ) ? strip_tags( $new_instance['twitter'] ) : '';
 		$instance['youtube'] = ( ! empty( $new_instance['youtube'] ) ) ? strip_tags( $new_instance['youtube'] ) : '';
-		$instance['instagram'] = ( ! empty( $new_instance['instagram'] ) ) ? strip_tags( $new_instance['instagram'] ) : '';
 
 		return $instance;
 	}
@@ -431,7 +419,7 @@ class Recent_Posts_Widget extends WP_Widget {
 
 
 						<div class="recent-post-info">
-							<h4 class="recent-post-title"><?php echo mb_strimwidth(get_the_title(), 0, 60, '...')?></h4>
+							<h4 class="recent-post-title"><?php echo mb_strimwidth(get_the_title(), 0, 650, '...')?></h4>
 							<span class="recent-post-time">
 								<?php $time_diff = human_time_diff( get_post_time('U'), current_time('timestamp') );
 													echo "$time_diff назад";
