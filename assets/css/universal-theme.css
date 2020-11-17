@@ -187,6 +187,16 @@ body {
   }
 }
 
+@media screen and (max-width: 480px) {
+  .header-nav {
+    top: 105px;
+  }
+  .search-form {
+    width: 86%;
+    margin-top: 10px;
+  }
+}
+
 .home {
   background-color: #E5E5E5;
 }
@@ -1002,6 +1012,9 @@ body {
   .sidebar-front-page {
     width: 100%;
   }
+  #downloader_widget-3 {
+    padding-top: 40px;
+  }
 }
 
 .investigation {
@@ -1440,6 +1453,16 @@ h4, p {
   }
   .career {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .career-grid {
+    display: flex;
+    flex-direction: column;
+  }
+  .career-grid-image {
+    opacity: 0.2;
   }
 }
 

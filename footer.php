@@ -2,7 +2,7 @@
     <div class="container">
         <div class="footer-menu-bar">
                 <?php dynamic_sidebar( 'sidebar-footer' ); ?>
-        </div>
+                </div>
         <div class="footer-info">
             <?php 
                 wp_nav_menu( [
@@ -12,17 +12,17 @@
                     'echo'            => true
                 ] ); 
                 $instance = array(
-                    'facebook' => 'https://fb1111.com/',
+                    'facebook' => 'https://fb.com/',
                     'twitter' => 'https://twitter.com/',
                     'youtube' => 'https://youtube.com/',
-                    'instagram' => 'https://instagram/',
+                    'instagram' => 'https://instagram.com',
                     'title' => '',
                 );
                 $args = array(
                     'before_widget' => '<div class="footer-social">',
-                    'after_widget' =>  '</div>',
+                    'after_widget' => '</div>',
                 );
-                the_widget( 'Social_Widget', $instance, $args );
+                the_widget( 'Social_Widget2', $instance, $args );
             ?>
         </div> 
             <?php 
@@ -36,7 +36,8 @@
                 <?php echo date('Y') . '&copy;' . get_bloginfo( 'name' ) ?>
                </span>
         </div>
-    </div>    
+    </div> 
+       
 </footer>    
     <?php wp_footer(); ?>
     </body>
