@@ -9,7 +9,7 @@
 
         $myposts = get_posts([ 
             'numberposts' => 1,
-            'category_name' => 'javascript, css, html, web-design',
+            'category_name' => 'css, html, web-design',
         ]);
 
         //Проверяем, есть ли посты
@@ -353,8 +353,8 @@ wp_reset_postdata(); // Сбрасываем $post
                 <!-- Вывода постов, функции цикла: the_title() и т.д. -->
 
                 <!-- <a href="<?php echo get_the_permalink() ?> " class="news-item-permalink"> -->
-
                 <li class="news-item">
+                
                     <!-- <a href="<?php echo get_the_permalink() ?> " class="news-item-permalink"> -->
 
                     <img src="<?php 
@@ -382,9 +382,9 @@ wp_reset_postdata(); // Сбрасываем $post
                                     }
                                     ?>
                         </span>
-                        <h4 class="news-title"> <?php the_title()?></h4>
+                        <h4 class="news-title"> <?php echo mb_strimwidth(get_the_title(), 0, 70, '...')?> </h4>
                         <p class="news-excerpt">
-                            <?php echo mb_strimwidth(get_the_excerpt(), 0, 160, '...') ?>
+                            <?php echo mb_strimwidth(get_the_excerpt(), 0, 100, '...') ?>
                         </p>
                         <div class="news-feedback">
                             <span class="date"><?php the_time( 'j F' );?></span>
@@ -408,8 +408,11 @@ wp_reset_postdata(); // Сбрасываем $post
                                 <span class="likes-counter"><?php comments_number('0', '1', '%') ?> </span>
                             </div>
                         </div>
+                          
                     </div>
-                </li>
+                </li> 
+                
+        
 
 
 

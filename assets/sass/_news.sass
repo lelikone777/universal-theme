@@ -84,9 +84,35 @@ h4, p
 
 @media screen and ( max-width: 1200px )
     .news
-        width: 67%  
+        width: 65%  
         &-item
             height: 300px
+
+@media screen and ( max-width: 1024px )
+    .news
+        &-item
+            flex-direction: column
+            height: auto
+        &-img
+            width: 100%
+        &-info
+            padding-top: 10px
+        &-title
+            padding: 15px 0
+        &-icon
+            right: 30px
+            top: 5px
+        &-feedback
+            padding: 10px 0
+
+@media screen and ( max-width: 960px )
+    .frontpage-bottom
+        flex-direction: column
+    .news
+        width: 100%
+        &-list
+        &-item
+            width: 100%
 
 
 

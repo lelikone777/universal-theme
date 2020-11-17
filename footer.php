@@ -12,9 +12,10 @@
                     'echo'            => true
                 ] ); 
                 $instance = array(
-                    'facebook' => 'https://fb.com/',
+                    'facebook' => 'https://fb1111.com/',
                     'twitter' => 'https://twitter.com/',
                     'youtube' => 'https://youtube.com/',
+                    'instagram' => 'https://instagram/',
                     'title' => '',
                 );
                 $args = array(
