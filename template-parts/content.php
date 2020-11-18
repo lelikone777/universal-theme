@@ -3,7 +3,7 @@
     <header class="entry-header <?php echo get_post_type();?>-header" style="background: linear-gradient(0deg, rgba(38, 45, 51, 0.75), rgba(38, 45, 51, 0.75)), url(<?php if( has_post_thumbnail() ) { echo get_the_post_thumbnail_url(); }
             else {
                 echo get_template_directory_uri().'/assets/images/img-default.png';
-            } ?> ) no-repeat center; background-size: 100%">
+            } ?> ) no-repeat center; background-size: cover">
 
 	<div class="container">
 		<div class="post-header-nav">
