@@ -1682,6 +1682,104 @@ h4, p {
   margin-bottom: 30px;
 }
 
+.post-content {
+  max-width: 623px;
+  padding-top: 60px;
+}
+
+.post-content p {
+  font-size: 18px;
+  line-height: 30px;
+  color: #4b5157;
+  margin: 30px 0;
+}
+
+.post-content .has-drop-cap:not(:focus):first-letter {
+  color: #4592FF;
+  font-family: 'Lato Black', sans-serif;
+}
+
+.post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6 {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.post-content h1 {
+  font-size: 30px;
+}
+
+.post-content h2 {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 30px;
+}
+
+.post-content h3 {
+  font-size: 22px;
+}
+
+.post-content h4 {
+  font-size: 18px;
+}
+
+.post-content h5 {
+  font-size: 16px;
+}
+
+.post-content h6 {
+  font-size: 14px;
+}
+
+.post-content ul, .post-content ol {
+  margin-top: 20px;
+  padding: 0;
+  margin-left: 20px;
+  font-size: 18px;
+}
+
+.post-content blockquote {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 25px;
+  margin-left: 0;
+  position: relative;
+  margin-top: 80px;
+  margin-bottom: 45px;
+}
+
+.post-content blockquote::before {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  content: '';
+  background-image: url(../images/quote.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 70px;
+  height: 70px;
+  z-index: -1;
+}
+
+.post-content blockquote cite {
+  font-style: normal;
+}
+
+.post .tags-links a {
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 5px 15px;
+  color: #262D33;
+  border: 1px solid #d9dadb;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
 .news-feedback .clock-icon {
   margin-right: 5px;
 }
@@ -1698,4 +1796,22 @@ h4, p {
   position: absolute;
   left: -67px;
   bottom: -100px;
+}
+
+.wp-block-button__link {
+  display: inline-block;
+  color: #fff;
+  padding: 10px 20px;
+  padding-right: 50px;
+  border-radius: 20px;
+  background: #4592FF;
+  text-decoration: none;
+  background-image: url("../images/arrow.svg");
+  background-repeat: no-repeat;
+  background-position: center right 20px;
+  border-radius: 20px;
+}
+
+.wp-block-button__link:focus, .wp-block-button__link:visited, .wp-block-button__link:hover {
+  color: #fff;
 }

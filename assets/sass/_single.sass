@@ -52,6 +52,83 @@
         max-width: 750px
         margin-top: 52px
         margin-bottom: 30px
+    &-content
+        max-width: 623px
+        padding-top: 60px
+        p
+            font-size: 18px
+            line-height: 30px
+            color: #4b5157
+            margin: 30px 0
+        .has-drop-cap
+            &:not(:focus)
+                &:first-letter
+                    color: #4592FF
+                    font-family: 'Lato Black', sans-serif
+        h1, h2, h3, h4, h5, h6
+            font-family: Roboto Slab
+            font-style: normal
+            font-weight: bold 
+        h1
+            font-size: 30px
+        h2
+            font-family: Roboto Slab
+            font-style: normal
+            font-weight: bold
+            font-size: 25px
+            line-height: 30px
+        h3
+            font-size: 22px
+        h4
+            font-size: 18px
+        h5
+            font-size: 16px
+        h6
+            font-size: 14px
+        ul, ol
+            margin-top: 20px
+            padding: 0
+            margin-left: 20px
+            font-size: 18px
+        blockquote
+            font-family: 'Roboto Slab'
+            font-style: normal
+            font-weight: bold
+            font-size: 25px
+            line-height: 25px
+            margin-left: 0
+            position: relative
+            margin-top: 80px
+            margin-bottom: 45px
+            &::before
+                position: absolute
+                top: -20px
+                left: -20px
+                content: ''
+                background-image: url(../images/quote.svg)
+                background-repeat: no-repeat
+                background-size: 100%
+                width: 70px
+                height: 70px
+                z-index: -1
+            cite
+                font-style: normal
+    .tags-links
+        a
+            text-decoration: none
+            font-size: 14px
+            line-height: 20px
+            padding: 5px 15px
+            color: #262D33
+            border: 1px solid #d9dadb
+            border-radius: 5px
+            margin-right: 10px
+
+            
+
+
+
+
 
 .news-feedback  
     .clock-icon
@@ -64,4 +141,17 @@
     position: absolute
     left: -67px
     bottom: -100px
-    
+.wp-block-button__link
+    display: inline-block
+    color: #fff
+    padding: 10px 20px
+    padding-right: 50px
+    border-radius: 20px
+    background: #4592FF
+    text-decoration: none
+    background-image: url('../images/arrow.svg')
+    background-repeat: no-repeat
+    background-position: center right 20px
+    border-radius: 20px
+    &:focus, &:visited, &:hover
+        color: #fff   
