@@ -8,6 +8,7 @@
   <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 7" id="arrow">
     <path fill-rule="evenodd" clip-rule="evenodd" d="M0 3v1h11v3l4-3.5L11 0v3H0z" ></path>
   </symbol>
+
   <symbol  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" id="download">
     <path fill-rule="evenodd" clip-rule="evenodd" d="M18 13.426c0-.237.263-.426.5-.426s.5.189.5.426v4.134a.44.44 0 01-.432.44H2.426A.435.435 0 012 17.56v-4.134c0-.237.263-.426.5-.426s.5.189.5.426V17h15v-3.574zM11 1v10h3l-3.5 4L7 11h3V1h1z" ></path>
   </symbol>
@@ -22,5 +23,11 @@
   </symbol>
     <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 18" id="bookmark">
     <path fill-rule="evenodd" clip-rule="evenodd" d="M2 0h10a2 2 0 012 2v16l-6.905-5L0 18V2a2 2 0 012-2z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" id="home">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M3 18h5v-6h4v6h5v-7h2L10 1 1 11h2v7z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" id="clock">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 14.25a6.75 6.75 0 110-13.5 6.75 6.75 0 010 13.5zm.75-6.75v-3a.75.75 0 00-1.5 0v3.75c0 .414.336.75.75.75h2.25a.75.75 0 000-1.5h-1.5z"></path>
   </symbol>
 </svg>

@@ -386,10 +386,12 @@ wp_reset_postdata(); // Сбрасываем $post
                         <p class="news-excerpt">
                             <?php echo mb_strimwidth(get_the_excerpt(), 0, 100, '...') ?>
                         </p>
-                        <div class="news-feedback">
-                            <span class="date"><?php the_time( 'j F' );?></span>
 
-                            <div class="comments">
+
+                        <div class="post-header-info">
+                            <span class="post-header-date"><?php the_time( 'j F' );?></span>
+
+                            <div class="comments post-header-comments">
                                 <svg width="19" height="15" class="icon comments-icon" fill="#BCBFC2">
                                     <use
                                         xlink:href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#Comment">
@@ -398,14 +400,14 @@ wp_reset_postdata(); // Сбрасываем $post
                                 <span class="comments-counter"> <?php comments_number('0', '1', '%')  ?> </span>
                             </div>
 
-                            <div class="likes">
+                            <div class="likes post-header-likes">
                                 <svg width="19" height="15" class="icon likes-icon" fill="#BCBFC2">
                                     <use
                                         xlink:href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#heart">
                                     </use>
                                 </svg>
-
                                 <span class="likes-counter"><?php comments_number('0', '1', '%') ?> </span>
+                                
                             </div>
                         </div>
                           
