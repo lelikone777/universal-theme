@@ -1,4 +1,6 @@
 <?php 
 get_header(); ?>
-<h1>Свой контент<<<</h1>
+    <div class="container">
+       <h1>index.php<<<</h1>
+    </div>
 <?php get_footer();

@@ -2,6 +2,8 @@
     &-header
         padding: 60px 0 72px
         color: #fff
+        &-wrapper
+            position: relative
         &-info
             display: flex
         &-nav
@@ -54,14 +56,70 @@
         max-width: 750px
         margin-top: 52px
         margin-bottom: 30px
+    &-author
+        position: absolute
+        right: 0
+        display: flex
+        align-items: center
+        flex-direction: column
+        justify-content: center
+        background-color: #fff
+        border-radius: 10px
+        overflow: hidden
+        border: 1px solid #D9DADB
+        min-width: 263px
+        &-info
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            color: #4B5157
+            padding: 35px 25px 20px
+        &-name
+            font-family: 'Roboto Slab'
+            font-style: normal
+            font-weight: bold
+            font-size: 20px
+            line-height: 25px
+            margin-top: 15px
+            margin-bottom: 5px
+            color: #262D33
+        &-rank
+            font-size: 14px
+            line-height: 20px
+            margin-bottom: 15px
+        &-posts
+            font-size: 14px
+            line-height: 20px
+            font-family: 'Lato Black', sans-serif
+            color: #262D33
+        &-link
+            color: #262d33
+            padding: 15px 25px
+            text-decoration: none
+            border-top: 1px solid #D9DADB
+            width: 100%
+            text-align: center 
+            font-size: 14px
+            line-height: 20px
+            font-family: "Lato Black", sans-serif
+            &:visited
+                color: #262d33
+        &-avatar
+            width: 90px
+            height: 90px
+            border-radius: 50%
+            object-fit: cover
     &-content
-        max-width: 623px
+        // max-width: 623px
         padding-top: 60px
         p
             font-size: 18px
             line-height: 30px
             color: #4b5157
             margin: 30px 0
+            &:first-child
+                max-width: 623px
         .has-drop-cap
             &:not(:focus)
                 &:first-letter

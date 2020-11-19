@@ -69,11 +69,44 @@ body {
   display: none;
 }
 
+.header-light {
+  background-color: #fff;
+}
+
+.header-light .logo-name {
+  color: #4592FF;
+}
+
+.header-light .menu-item a {
+  color: #939699;
+}
+
+.header-light .search-form input {
+  background-color: #F5F5F5;
+}
+
 .menu-item a {
   text-decoration: none;
   color: #ffffff;
   margin-left: 15px;
   margin-right: 15px;
+}
+
+.custom-logo {
+  width: 40px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-name {
+  color: #fff;
+  font-family: 'Roboto Slab';
+  font-size: 24px;
+  margin-left: 10px;
+  text-decoration: none;
 }
 
 .search-form {
@@ -1561,6 +1594,10 @@ h4, p {
   font-family: 'Lato black', sans-serif;
 }
 
+.footer-nav-wrapper {
+  margin-right: auto;
+}
+
 .footer-text {
   max-width: 750px;
 }
@@ -1610,6 +1647,10 @@ h4, p {
 .post-header {
   padding: 60px 0 72px;
   color: #fff;
+}
+
+.post-header-wrapper {
+  position: relative;
 }
 
 .post-header-info {
@@ -1689,8 +1730,77 @@ h4, p {
   margin-bottom: 30px;
 }
 
+.post-author {
+  position: absolute;
+  right: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #D9DADB;
+  min-width: 263px;
+}
+
+.post-author-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #4B5157;
+  padding: 35px 25px 20px;
+}
+
+.post-author-name {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 25px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: #262D33;
+}
+
+.post-author-rank {
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 15px;
+}
+
+.post-author-posts {
+  font-size: 14px;
+  line-height: 20px;
+  font-family: 'Lato Black', sans-serif;
+  color: #262D33;
+}
+
+.post-author-link {
+  color: #262d33;
+  padding: 15px 25px;
+  text-decoration: none;
+  border-top: 1px solid #D9DADB;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: "Lato Black", sans-serif;
+}
+
+.post-author-link:visited {
+  color: #262d33;
+}
+
+.post-author-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 .post-content {
-  max-width: 623px;
   padding-top: 60px;
 }
 
@@ -1699,6 +1809,10 @@ h4, p {
   line-height: 30px;
   color: #4b5157;
   margin: 30px 0;
+}
+
+.post-content p:first-child {
+  max-width: 623px;
 }
 
 .post-content .has-drop-cap:not(:focus):first-letter {

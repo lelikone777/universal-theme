@@ -10,11 +10,16 @@
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<header class="header">
+<header class="header header-light">
     <div class="container">
         <div class="header-wrapper">
         <?php
-       
+             if( has_custom_logo() ){
+                // логотип есть выводим его
+                echo '<div class="logo">' . get_custom_logo() . '<a href="#" class="logo-name">' . get_bloginfo('name') . '</a></div>';
+            } else {
+                echo '<span class="logo-name">' . get_bloginfo('name') . '</span>';
+            }
 
             wp_nav_menu( [
                 'theme_location'  => 'header_menu',
