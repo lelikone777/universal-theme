@@ -388,10 +388,10 @@ wp_reset_postdata(); // Сбрасываем $post
                         </p>
 
 
-                        <div class="post-header-info">
-                            <span class="post-header-date"><?php the_time( 'j F' );?></span>
+                        <div class="news-feedback">
+                            <span class="date"><?php the_time( 'j F' );?></span>
 
-                            <div class="comments post-header-comments">
+                            <div class="comments">
                                 <svg width="19" height="15" class="icon comments-icon" fill="#BCBFC2">
                                     <use
                                         xlink:href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#Comment">

@@ -420,6 +420,9 @@ body {
     height: auto;
     padding-bottom: 30px;
   }
+  .left .author {
+    margin-bottom: 30px;
+  }
 }
 
 .article-list {
@@ -1607,6 +1610,10 @@ h4, p {
 .post-header {
   padding: 60px 0 72px;
   color: #fff;
+}
+
+.post-header-info {
+  display: flex;
 }
 
 .post-header-nav {
