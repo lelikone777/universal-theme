@@ -16,9 +16,9 @@
         <?php
              if( has_custom_logo() ){
                 // логотип есть выводим его
-                echo '<div class="logo">' . get_custom_logo() . '<a href="echo get_home_url();" class="logo-name">' . get_bloginfo('name') . '</a></div>';
+                echo '<div class="logo">' . get_custom_logo() . '<a class="logo-name" href="' . get_home_url() . '">' . get_bloginfo('name') . '</a></div>';
             } else {
-                echo '<a href="echo get_home_url();" class="logo-name">' . get_bloginfo('name') . '</a>';
+                echo '<a href="get_home_url();" class="logo-name">' . get_bloginfo('name') . '</a>';
             }
 
             wp_nav_menu( [
