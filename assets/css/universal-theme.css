@@ -326,6 +326,23 @@ body {
   z-index: 2;
 }
 
+.hero .left .post-text .more-button {
+  display: inline-block;
+  color: #fff;
+  padding: 10px 20px;
+  padding-right: 50px;
+  border-radius: 20px;
+  background: #4592FF;
+  text-decoration: none;
+  background-image: url("../images/Arrow.svg");
+  background-repeat: no-repeat;
+  background-position: center right 20px;
+}
+
+.hero .left .post-text .more-button:focus, .hero .left .post-text .more-button:visited, .hero .left .post-text .more-button:hover {
+  color: #fff;
+}
+
 .hero .right {
   flex-basis: 25%;
 }
@@ -388,23 +405,6 @@ body {
   margin-top: 8px;
 }
 
-.more {
-  display: inline-block;
-  color: #fff;
-  padding: 10px 20px;
-  padding-right: 50px;
-  border-radius: 20px;
-  background: #4592FF;
-  text-decoration: none;
-  background-image: url("../images/arrow.svg");
-  background-repeat: no-repeat;
-  background-position: center right 20px;
-}
-
-.more:focus, .more:visited, .more:hover {
-  color: #fff;
-}
-
 .category-link {
   color: #4592ff;
   text-transform: uppercase;
@@ -437,6 +437,26 @@ body {
 
 .category-link.articles {
   color: #FF4F52;
+}
+
+.category-link.career {
+  color: #62218d;
+}
+
+.category-link.photo-report {
+  color: #991688;
+}
+
+.category-link.investigation {
+  color: #221620;
+}
+
+.category-link.popular {
+  color: #a56dff;
+}
+
+.category-link.compilations {
+  color: #6dbdff;
 }
 
 @media screen and (max-width: 1200px) {
@@ -1316,7 +1336,7 @@ h4, p {
   margin-bottom: 20px;
 }
 
-.photo-report-button::hover {
+.photo-report-button:focus, .photo-report-button:visited, .photo-report-button:hover {
   color: #fff;
 }
 

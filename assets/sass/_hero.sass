@@ -69,6 +69,21 @@
             &-text
                 position: relative
                 z-index: 2
+                .more-button
+                    display: inline-block
+                    color: #fff
+                    padding: 10px 20px
+                    padding-right: 50px
+                    border-radius: 20px
+                    background: #4592FF
+                    text-decoration: none
+                    background-image: url('../images/Arrow.svg')
+                    background-repeat: no-repeat
+                    background-position: center right 20px
+                    &:focus, &:visited, &:hover
+                        color: #fff
+                          
+
     .right
         flex-basis: 25%
         .recommend
@@ -115,19 +130,6 @@
                 font-weight: 400
                 margin-bottom: 0
                 margin-top: 8px
-.more
-    display: inline-block
-    color: #fff
-    padding: 10px 20px
-    padding-right: 50px
-    border-radius: 20px
-    background: #4592FF
-    text-decoration: none
-    background-image: url('../images/arrow.svg')
-    background-repeat: no-repeat
-    background-position: center right 20px
-    &:focus, &:visited, &:hover
-        color: #fff
 .category-link
     color: #4592ff
     text-transform: uppercase
@@ -148,6 +150,18 @@
         color: #3DC47E
     &.articles
         color: #FF4F52
+    &.career
+        color: #62218d
+    &.photo-report
+        color: #991688
+    &.investigation
+        color: #221620
+    &.popular
+        color: #a56dff
+    &.compilations	
+        color: #6dbdff
+
+
 
 @media screen and ( max-width: 1200px )
     .hero

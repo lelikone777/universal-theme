@@ -717,6 +717,7 @@ function delete_intermediate_image_sizes( $sizes ){
 		'2048x2048',
 	] );
 }
+
 ## Удаление конструкции [...] на конце в отрывках
 add_filter('excerpt_more', function($more) {
 	return '...';
@@ -728,3 +729,23 @@ function plural_form($number, $after) {
 	echo $number.' '.$after[ ($number%100>4 && $number%100<20)? 2: $cases[min($number%10, 5)] ];
 }
 
+##Убираем циклическую ссылку из логотипа на главной странице
+function nanima_logo() {
+	$custom_logo_id = get_theme_mod( 'custom_logo' );
+	if(is_home()){
+	$html = wp_get_attachment_image( $custom_logo_id, 'full', false, array(
+	'class' => 'custom-logo',
+	'itemprop' => 'url image',
+	'alt' => get_bloginfo('name')
+	) );}
+	else {
+	$html = sprintf( '<a href="%1$s" class="custom-logo-link" rel="home" title="'. get_bloginfo('name') .'" itemprop="url">%2$s</a>',
+	esc_url( home_url( '/' ) ),
+	wp_get_attachment_image( $custom_logo_id, 'full', false, array(
+	'class' => 'custom-logo',
+	'itemprop' => 'url image',
+	'alt' => get_bloginfo('name'))
+	) );}
+	return $html;
+	}
+	add_filter( 'get_custom_logo', 'nanima_logo' );
