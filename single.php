@@ -1,6 +1,5 @@
 <?php get_header('post'); ?>
-        <main class="site-main">
-            
+    <main class="site-main">
             <?php
             //Пока есть посты
                 while ( have_posts() ) :
@@ -17,14 +16,20 @@
                     //         'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Вперед', 'universal-example' ) . '</span>',
                     //     )
                     // );
-                    ?><div class="container"><?php
-                    // Если комментарии к записи открыты - выводим комментарии
-                    if ( comments_open() || get_comments_number() ) :
-                    // Находим файл comments.php и выводим его
-                        comments_template();
-                    endif;
-                    ?> </div> <?php
-                endwhile; // Конец цикла Wordpress
-            ?>
-        </main>
+                    ?>
+                        <div class="container">
+                            <?php get_sidebar('home-top'); ?>
+                            <?php
+                                // Если комментарии к записи открыты - выводим комментарии
+                                if ( comments_open() || get_comments_number() ) :
+                                // Находим файл comments.php и выводим его
+                                    comments_template();
+                                endif;
+                            ?> 
+                        </div> 
+                    <?php
+
+            endwhile; // Конец цикла Wordpress
+        ?>
+    </main>
 <?php get_footer(); ?>

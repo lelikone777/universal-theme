@@ -13,7 +13,7 @@ if ( ! function_exists( 'universal_theme_setup' ) ) :
             'width'       => 190,
             'flex-height' => true,
             'header-text' => 'universal',
-            'unlink-homepage-logo' => false, // WP 5.5
+            'unlink-homepage-logo' => true, // WP 5.5
         ] );
 
         //регистрация меню
@@ -49,6 +49,17 @@ function universal_example_widgets_init() {
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Сайдбар на странице поста с последними постами', 'universal-theme' ),
+			'id'            => 'sidebar-post-recent',
+			'description'   => esc_html__( 'Добавьте виджеты сюда.', 'universal-theme' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '',
+			'after_title'   => '',
 		)
 	);
 	register_sidebar(
@@ -209,6 +220,74 @@ function register_downloader_widget() {
 }
 add_action( 'widgets_init', 'register_downloader_widget' );
 
+
+
+
+/**
+ * >>>>>>>>>>>>>>>>> Добавление нового виджета Sidebar_post_recent.
+ */
+class Sidebar_post_recent extends WP_Widget {
+
+	// Регистрация виджета используя основной класс
+	function __construct() {
+		// вызов конструктора выглядит так:
+		// __construct( $id_base, $name, $widget_options = array(), $control_options = array() )
+		parent::__construct(
+			'sidebar_post_recent', // ID виджета, если не указать (оставить ''), то ID будет равен названию класса в нижнем регистре: Sidebar_post_recent
+			'Сайцдбар последних постов',
+			array( 'description' => 'Файлы для скачивания', 'classname' => 'sidebar_post_recent', )
+		);
+
+		// скрипты/стили виджета, только если он активен
+		if ( is_active_widget( false, false, $this->id_base ) || is_customize_preview() ) {
+			add_action('wp_enqueue_scripts', array( $this, 'add_sidebar_post_recent_scripts' ));
+			add_action('wp_head', array( $this, 'add_sidebar_post_recent' ) );
+		}
+	}
+
+
+	function update( $new_instance, $old_instance ) {
+		$instance = array();
+        $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+        $instance['description'] = ( ! empty( $new_instance['description'] ) ) ? strip_tags( $new_instance['description'] ) : '';
+		$instance['link'] = ( ! empty( $new_instance['link'] ) ) ? strip_tags( $new_instance['link'] ) : '';
+
+		return $instance;
+	}
+
+	// скрипт виджета
+	function add_sidebar_post_recent_scripts() {
+		// фильтр чтобы можно было отключить скрипты
+		if( ! apply_filters( 'show_my_widget_script', true, $this->id_base ) )
+			return;
+
+		$theme_url = get_stylesheet_directory_uri();
+
+		wp_enqueue_script('my_widget_script', $theme_url .'/my_widget_script.js' );
+	}
+
+	// стили виджета
+	function add_sidebar_post_recent_style() {
+		// фильтр чтобы можно было отключить стили
+		if( ! apply_filters( 'show_my_widget_style', true, $this->id_base ) )
+			return;
+		?>
+<style type="text/css">
+.my_widget a {
+    display: inline;
+}
+</style>
+<?php
+	}
+
+} 
+// конец класса Sidebar_post_recent
+
+// регистрация Sidebar_post_recent в WordPress
+function register_sidebar_post_recent() {
+	register_widget( 'Sidebar_post_recent' );
+}
+add_action( 'widgets_init', 'register_sidebar_post_recent' );
 
 
 
@@ -729,23 +808,23 @@ function plural_form($number, $after) {
 	echo $number.' '.$after[ ($number%100>4 && $number%100<20)? 2: $cases[min($number%10, 5)] ];
 }
 
-##Убираем циклическую ссылку из логотипа на главной странице
-function nanima_logo() {
-	$custom_logo_id = get_theme_mod( 'custom_logo' );
-	if(is_home()){
-	$html = wp_get_attachment_image( $custom_logo_id, 'full', false, array(
-	'class' => 'custom-logo',
-	'itemprop' => 'url image',
-	'alt' => get_bloginfo('name')
-	) );}
-	else {
-	$html = sprintf( '<a href="%1$s" class="custom-logo-link" rel="home" title="'. get_bloginfo('name') .'" itemprop="url">%2$s</a>',
-	esc_url( home_url( '/' ) ),
-	wp_get_attachment_image( $custom_logo_id, 'full', false, array(
-	'class' => 'custom-logo',
-	'itemprop' => 'url image',
-	'alt' => get_bloginfo('name'))
-	) );}
-	return $html;
-	}
-	add_filter( 'get_custom_logo', 'nanima_logo' );
+// ##Убираем циклическую ссылку из логотипов на главной странице
+// function nanima_logo() {
+// 	$custom_logo_id = get_theme_mod( 'custom_logo' );
+// 	if(is_home()){
+// 	$html = wp_get_attachment_image( $custom_logo_id, 'full', false, array(
+// 	'class' => 'custom-logo',
+// 	'itemprop' => 'url image',
+// 	'alt' => get_bloginfo('name')
+// 	) );}
+// 	else {
+// 	$html = sprintf( '<a href="%1$s" class="custom-logo-link" rel="home" title="'. get_bloginfo('name') .'" itemprop="url">%2$s</a>',
+// 	esc_url( home_url( '/' ) ),
+// 	wp_get_attachment_image( $custom_logo_id, 'full', false, array(
+// 	'class' => 'custom-logo',
+// 	'itemprop' => 'url image',
+// 	'alt' => get_bloginfo('name'))
+// 	) );}
+// 	return $html;
+// 	}
+// 	add_filter( 'get_custom_logo', 'nanima_logo' );

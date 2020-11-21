@@ -16,7 +16,7 @@
         <?php
             
             
-            if( has_custom_logo() && is_front_page()){
+            if( has_custom_logo()){
                 // логотип есть выводим его
                
                 echo '<div class="logo">' . get_custom_logo() . '<span class="logo-name">' . get_bloginfo('name') . '</span></div>';
