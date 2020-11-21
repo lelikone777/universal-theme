@@ -16,9 +16,10 @@
                     //         'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Вперед', 'universal-example' ) . '</span>',
                     //     )
                     // );
+                    
                     ?>
+                        <?php get_sidebar('post-recent'); ?>
                         <div class="container">
-                            <?php get_sidebar('home-top'); ?>
                             <?php
                                 // Если комментарии к записи открыты - выводим комментарии
                                 if ( comments_open() || get_comments_number() ) :

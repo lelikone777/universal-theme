@@ -7,11 +7,11 @@
  * @package universal-theme
  */
 
-if ( ! is_active_sidebar( 'main-sidebar-top' ) ) {
+if ( ! is_active_sidebar( 'sidebar-post-recent' ) ) {
 	return;
 }
 ?>
 
-<div id="secondary" class="main-sidebar-top">
-	<?php dynamic_sidebar( 'main-sidebar-top' ); ?>
+<div id="secondary" class="sidebar-post-recent">
+	<?php dynamic_sidebar( 'sidebar-post-recent' ); ?>
 </div><!-- #secondary -->
