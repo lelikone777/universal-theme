@@ -526,9 +526,11 @@ body {
 
 .article-title {
   margin: 0;
+  font-family: Lato Regular;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
+  color: #FFFFFF;
 }
 
 @media screen and (max-width: 1024px) {
@@ -1093,6 +1095,32 @@ body {
   font-size: 16px;
   line-height: 25px;
   color: #262D33;
+  margin-bottom: 10px;
+}
+
+.sidebar-post-recent .recent-post2-feedback {
+  display: flex;
+}
+
+.sidebar-post-recent .recent-post2-eyes {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-post-recent .recent-post2-eyes-counter {
+  color: #939699;
+  margin-left: 5px;
+}
+
+.sidebar-post-recent .recent-post2-comments {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-post-recent .recent-post2-comments-counter {
+  color: #939699;
+  margin-left: 5px;
 }
 
 @media screen and (max-width: 1200px) {

@@ -746,11 +746,24 @@ class Recent_Posts_Widget2 extends WP_Widget {
 
 							<div class="recent-post2-info">
 								<h4 class="recent-post2-title"><?php echo mb_strimwidth(get_the_title(), 0, 650, '...')?></h4>
-								<span class="recent-post2-time">
-									<?php $time_diff = human_time_diff( get_post_time('U'), current_time('timestamp') );
-										echo "$time_diff назад";
-									?>
-								</span>
+								<div class="recent-post2-feedback">
+									<div class="likes post-header-likes recent-post2-eyes">
+										<svg width="19" height="15" class="icon likes-icon " fill="#BCBFC2">
+											<use
+												xlink:href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#eye">
+											</use>
+										</svg>
+										<span class="likes-counter recent-post2-eyes-counter"><?php comments_number('0', '1', '%') ?> </span>
+									</div>
+									<div class="comments recent-post2-comments">
+										<svg width="19" height="15" class="icon comments-icon" fill="#BCBFC2">
+											<use
+												xlink:href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#Comment">
+											</use>
+										</svg>
+										<span class="comments-counter recent-post2-comments-counter"> <?php comments_number('0', '1', '%')  ?> </span>
+									</div>
+								</div>
 							</div>
 						</a>
 					</div>
