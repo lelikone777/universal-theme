@@ -545,7 +545,7 @@ wp_reset_postdata(); // Сбрасываем $post
                                         <!-- <?php echo mb_strimwidth(get_the_title(), 0, 60, '...') ?> </h4>          -->
                                         <h4><?php the_title()?></h4>
                                         <p><?php echo mb_strimwidth(get_the_excerpt(), 0, 80, '...') ?></p>
-                                        <a href="<?php echo get_the_permalink(); ?>" class="more career-grid-button">Читать далее</a>
+                                        <a href="<?php echo get_the_permalink(); ?>" class=" career-grid-button">Читать далее</a>
                                     </li>
                                     <?php
                                     break;

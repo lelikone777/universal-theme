@@ -420,11 +420,11 @@ body {
 }
 
 .category-link.web-design {
-  color: #FFA34D;
+  color: #ff4d4d;
 }
 
 .category-link.javascript {
-  color: #6E99AE;
+  color: #c27819;
 }
 
 .category-link.html {
@@ -432,7 +432,7 @@ body {
 }
 
 .category-link.css {
-  color: #3DC47E;
+  color: #298656;
 }
 
 .category-link.articles {
@@ -444,7 +444,7 @@ body {
 }
 
 .category-link.photo-report {
-  color: #991688;
+  color: #790069;
 }
 
 .category-link.investigation {
@@ -1071,6 +1071,7 @@ body {
 .sidebar-post-recent .recent-post2-item {
   flex-basis: 25%;
   min-height: 425px;
+  text-align: center;
 }
 
 .sidebar-post-recent .recent-post2-link {
@@ -1082,10 +1083,13 @@ body {
   width: 263px;
   height: 180px;
   margin-top: 60px;
+  text-align: center;
 }
 
 .sidebar-post-recent .recent-post2-info {
   margin-top: 21px;
+  text-align: left;
+  padding-left: 4%;
 }
 
 .sidebar-post-recent .recent-post2-title {
@@ -1483,6 +1487,20 @@ h4, p {
 
 .career-grid-button {
   z-index: 1;
+  display: inline-block;
+  color: #fff;
+  padding: 10px 20px;
+  padding-right: 50px;
+  border-radius: 20px;
+  background: #4592FF;
+  text-decoration: none;
+  background-image: url("../images/Arrow.svg");
+  background-repeat: no-repeat;
+  background-position: center right 20px;
+}
+
+.career-grid-button:focus, .career-grid-button:visited, .career-grid-button:hover {
+  color: #fff;
 }
 
 .career-grid-item {
