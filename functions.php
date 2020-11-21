@@ -725,7 +725,8 @@ class Recent_Posts_Widget2 extends WP_Widget {
 				$postslist = get_posts( array( 
 					'posts_per_page' => $count,
 					'order'=> 'ASC',
-					'orderby' => 'title' 
+					'orderby' => 'title',
+					'category_name' => 'articles', 
 				) );
 				foreach ( $postslist as $post ){
 					setup_postdata($post);
