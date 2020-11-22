@@ -1,0 +1,144 @@
+.comments
+    &-area
+        max-width: 750px
+    &-title
+        font-family: Roboto Slab
+        font-size: 40px
+        line-height: 50px
+    &-count
+        color: #939699
+        font-style: normal
+        font-family: "Lato Regular"
+        font-weight: normal
+        font-size: 40px
+        line-height: 50px
+    &-header
+        display: flex
+        align-items: center
+        justify-content: space-between
+    &-add
+        &-button
+            color: #262d33
+            text-decoration: none
+            display: flex
+            align-items: center
+            font-weight: 900
+            font-size: 14px
+            line-height: 20px
+            padding: 10px 20px
+            border: 1px solid #D9DADB
+            border-radius: 20px
+            &:visited
+                color: #262d33                
+        &-icon
+            fill: #BCBFC2
+            width: 18px
+            height: 18px
+            margin-right: 10px
+    &-list
+        margin-left: 0
+        padding: 0
+
+.comment
+    &-content
+        p
+            font-size: 18px
+            line-height: 30px
+            color: #4b5157
+            margin: 10px 0 15px 
+    a
+        text-decoration: none
+    &-body
+        display: flex
+        align-items: flex-start
+        border-top: 1px solid #D9DADB
+        padding-top: 20px
+        padding-bottom: 29px
+    &-author
+        &-name
+            font-family: Roboto Slab
+            font-style: normal
+            font-size: 16px
+            line-height: 25px
+            a
+                color: #262d33
+                &:visited
+                    color: #262D33       
+        &-avatar
+            margin-right: 15px
+            flex-shrink: 0
+            img
+                border-radius: 50%
+    &-meta
+        margin-left: 10px
+        a
+            font-size: 12px
+            line-height: 15px
+            color: #939699
+            &:visited
+                color: #939699
+    &-reply
+        display: flex
+        align-items: center
+        a
+            font-size: 12px
+            line-height: 15px
+            color: #262D33
+    &-form
+        background-color: #f5f5f5
+        border-radius: 10px
+        padding: 30px 40px 35px 30px
+        .avatar
+            border-radius: 50%
+            margin-right: 20px
+    &-label
+        font-family: 'Roboto Slab'
+        color: #262D33
+        font-size: 20px
+        line-height: 25px
+        display: block
+        margin-left: 95px
+        margin-bottom: 15px
+    &-textarea
+        min-height: 130px
+        max-width: 595px
+        resize: none
+        background-color: #fff
+        border: 1px solid #D9DaDb
+        border-radius: 10px
+        margin-bottom: 15px
+        &-wrapper
+            position: relative
+            width: 100%
+            &::before
+                content: ''
+                background-image: url(../images/angle.svg)
+                background-repeat: no-repeat
+                background-position: center center  
+                background-size: 100%
+                width: 12px
+                height: 20px
+                position: absolute
+                left: -10px
+                top: 30px
+    &-wrapper
+        display: flex
+        align-items: flex-start
+    &-submit
+        line-height: 20px;
+        display: inline-block
+        color: #fff
+        padding: 10px 20px
+        border-radius: 20px
+        background: #4592FF
+        text-decoration: none
+        background-image: url('../images/Arrow.svg')
+        background-repeat: no-repeat
+        background-position: center right 20px
+        padding-right: 50px
+        cursor: pointer
+        margin-left: 95px
+        &:focus, &:visited, &:hover
+            color: #fff
+        
+        

@@ -38,51 +38,61 @@ function universal_theme_comment( $comment, $args, $depth ) {
 		<div id="div-comment-<?php comment_ID() ?>" class="comment-body"><?php
 	} ?>
 
-	<div class="comment-author vcard">
-		<?php
-		if ( $args['avatar_size'] != 0 ) {
-			echo get_avatar( $comment, $args['avatar_size'] );
-		}
-		printf(
-			__( '<cite class="fn">%s</cite>' ),
-			get_comment_author_link()
-		);
+	<div class="comment-author-avatar">
+		<?php 
+			if ( $args['avatar_size'] != 0 ) {
+				echo get_avatar( $comment, $args['avatar_size'] );
+			} 
 		?>
-        <span class="comment-meta commentmetadata">
-            <a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>">
-                <?php
-                printf(
-                    __( '%1$s, %2$s' ),
-                    get_comment_date('F jS'),
-                    get_comment_time()
-                ); ?>
-            </a>
-		    <?php edit_comment_link( __( '(Edit)' ), '  ', '' ); ?>
-    	</span>
 	</div>
+	<div class="comment-content">
+		<div class="comment-author vcard">
+			<?php
+			
+			printf(
+				__( '<cite class="comment-author-name">%s</cite>' ),
+				get_comment_author_link()
+			);
+			?>
+			<span class="comment-meta commentmetadata">
+				<a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>">
+					<?php
+					printf(
+						__( '%1$s, %2$s' ),
+						get_comment_date('F jS'),
+						get_comment_time()
+					); ?>
+				</a>
+				<?php edit_comment_link( __( '(Edit)' ), '  ', '' ); ?>
+			</span>
+		</div>
 
-	<?php if ( $comment->comment_approved == '0' ) { ?>
-		<em class="comment-awaiting-moderation">
-			<?php _e( 'Your comment is awaiting moderation.' ); ?>
-		</em><br/>
-	<?php } ?>
+		<?php if ( $comment->comment_approved == '0' ) { ?>
+			<em class="comment-awaiting-moderation">
+				<?php _e( 'Your comment is awaiting moderation.' ); ?>
+			</em><br/>
+		<?php } ?>
 
 
 
-	<?php comment_text(); ?>
+		<?php comment_text(); ?>
 
-	<div class="reply">
-		<?php
-		comment_reply_link(
-			array_merge(
-				$args,
-				array(
-					'add_below' => $add_below,
-					'depth'     => $depth,
-					'max_depth' => $args['max_depth']
+		<div class="comment-reply">
+			<svg class="icon comments-add-icon" width="18" height="18">
+				<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#Comment"></use>
+            </svg>
+			<?php
+			comment_reply_link(
+				array_merge(
+					$args,
+					array(
+						'add_below' => $add_below,
+						'depth'     => $depth,
+						'max_depth' => $args['max_depth']
+					)
 				)
-			)
-		); ?>
+			); ?>
+		</div>
 	</div>
 
 	<?php if ( 'div' != $args['style'] ) { ?>
@@ -117,7 +127,7 @@ if ( post_password_required() ) {
 		<?php the_comments_navigation(); ?>
 
         <!-- //Выводим список комментариев -->
-		<ol class="comment-list">
+		<ol class="comments-list">
 			<?php
             //Выводим каждый отдельный комментарий
 			wp_list_comments(
@@ -144,7 +154,29 @@ if ( post_password_required() ) {
 
 	endif; // Check for have_comments().
 
-	comment_form();
+	comment_form(array(
+		'comment_field' => '<div class="comment-form-comment">
+		<label class="comment-label" for="comment-textarea">' . _x( 'Что вы думаете на этот счет? ', 'noun' ) . '</label>
+			<div class="comment-wrapper">
+			' . get_avatar(get_current_user_id(), 75) . '
+				<div class="comment-textarea-wrapper">
+					<textarea id="comment" name="comment" aria-required="true" class="comment-textarea"></textarea>
+				</div>
+			</div>
+		</div>',
+			'must_log_in'          => '<p class="must-log-in">' . 
+			sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.' ), wp_login_url( apply_filters( 'the_permalink', get_permalink() ) ) ) . '
+		</p>',
+		'logged_in_as'         => '',
+		'comment_notes_before' => '<p class="comment-notes">
+			<span id="email-notes">' . __( 'Your email address will not be published.' ) . '</span>'. 
+			( $req ? $required_text : '' ) . '
+		</p>',
+		'label_submit'         => 'Отправить',
+		'class_submit'         => 'comment-submit',
+		'submit_button'        => '<button name="%1$s" type="submit" id="%2$s" class="%3$s" >%4$s</button>',
+		'title_reply'          => '',
+	));
 	?>
 
 </div><!-- #comments -->
