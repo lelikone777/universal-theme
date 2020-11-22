@@ -116,12 +116,12 @@ if ( post_password_required() ) {
 			<h2 class="comments-title">
 				<?php echo 'Комментарии ' . '<span class="comments-count">' . get_comments_number() . '</span>'; ?>
 			</h2><!-- .comments-title -->
-			<a href="#" class="comments-add-button">
+			<label for="comment-textarea" class="comments-add-button">
 				<svg class="icon comments-add-icon">
                     <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#pencil"></use>
                 </svg>
 				Добавить комментарий
-			</a>
+			</label>
 		</div>
 
 		<?php the_comments_navigation(); ?>
@@ -160,7 +160,7 @@ if ( post_password_required() ) {
 			<div class="comment-wrapper">
 			' . get_avatar(get_current_user_id(), 75) . '
 				<div class="comment-textarea-wrapper">
-					<textarea id="comment" name="comment" aria-required="true" class="comment-textarea"></textarea>
+					<textarea name="comment" aria-required="true" id="comment-textarea" class="comment-textarea"></textarea>
 				</div>
 			</div>
 		</div>',
