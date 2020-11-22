@@ -102,12 +102,17 @@ if ( post_password_required() ) {
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
-		<h2 class="comments-title">
-			<?php
-            $universal_example_comment_count = get_comments_number();
-            echo 'Комментарии ' . '<span class="comment-count">' . get_comments_number() . '</span>';
-			?>
-		</h2><!-- .comments-title -->
+		<div class="comments-header">
+			<h2 class="comments-title">
+				<?php echo 'Комментарии ' . '<span class="comments-count">' . get_comments_number() . '</span>'; ?>
+			</h2><!-- .comments-title -->
+			<a href="#" class="comments-add-button">
+				<svg class="icon comments-add-icon">
+                    <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#pencil"></use>
+                </svg>
+				Добавить комментарий
+			</a>
+		</div>
 
 		<?php the_comments_navigation(); ?>
 

@@ -2065,3 +2065,32 @@ h4, p {
 .wp-block-button__link:focus, .wp-block-button__link:visited, .wp-block-button__link:hover {
   color: #fff;
 }
+
+.comments-area {
+  max-width: 750px;
+}
+
+.comments-title {
+  font-family: Roboto Slab;
+  font-size: 40px;
+  line-height: 50px;
+}
+
+.comments-count {
+  color: #939699;
+  font-style: normal;
+  font-family: "Lato Regular";
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 50px;
+}
+
+.comments-add-button {
+  color: #262d33;
+}
+
+.comments-add-icon {
+  fill: #195897;
+  width: 18px;
+  height: 18px;
+}
