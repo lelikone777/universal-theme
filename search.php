@@ -2,7 +2,7 @@
 
 <div class="container">
     <h1 class="search-title">Результаты поиска по запросу:</h1>
-    <div class="frontpage-bottom">
+    <div class="frontpage-bottom search-main">
         <div class="news-wrapper">
             <div class="news digest">
                 <ul class="news-list digest-list">
