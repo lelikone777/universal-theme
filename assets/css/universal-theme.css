@@ -2382,3 +2382,89 @@ h4, p {
   margin-left: auto;
   flex-grow: 1;
 }
+
+.category-title {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 50px;
+  color: #262D33;
+}
+
+.post-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.post-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 23%;
+  margin-bottom: 30px;
+}
+
+.post-card:not(:last-child) {
+  margin-right: 2%;
+}
+
+.post-card-thumb {
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.post-card-text {
+  padding: 15px 25px 25px 25px;
+}
+
+.post-card-text p {
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 14px;
+}
+
+.post-card-title {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 25px;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.post-card .author {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+}
+
+.post-card .author-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.post-card .author-info {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 10px;
+  align-items: center;
+}
+
+.post-card .author-info .date, .post-card .author-info .comments, .post-card .author-info .likes {
+  color: #939699;
+  display: flex;
+  align-items: center;
+}
+
+.post-card .author-info .likes, .post-card .author-info .comments {
+  margin-left: 10px;
+}
+
+.post-card .author-name {
+  width: 100%;
+}
