@@ -338,7 +338,7 @@ wp_reset_postdata(); // Сбрасываем $post
 
 <div class="container">
     <div class="frontpage-bottom">
-        <section class="news">
+        <div class="news">
             <ul class="news-list">
                 <?php		
                     global $post;
@@ -431,7 +431,7 @@ wp_reset_postdata(); // Сбрасываем $post
                     wp_reset_postdata(); // Сбрасываем $post
                 ?>
             </ul>
-        </section>
+        </div>
         <!-- подключаем нижний сайдбар -->
         <?php get_sidebar('home-bottom'); ?>
     </div>
