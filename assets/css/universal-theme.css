@@ -125,10 +125,11 @@ body {
   border-radius: 10px;
   border: none;
   padding: 10px 25px;
+  color: #312a2a;
 }
 
 .search-form input::placeholder {
-  color: #939699;
+  color: #4f5b66;
 }
 
 .search-form button {
