@@ -24,7 +24,10 @@
             width: 100%
             object-fit: cover
         &-text
+            display: flex
+            flex-direction: column
             padding: 15px 25px 25px 25px
+            align-items: end
             p
                 font-size: 14px
                 line-height: 20px
@@ -58,3 +61,31 @@
                     margin-left: 10px
             &-name
                 width: 100%
+
+@media screen and ( max-width: 1200px )
+    .post
+        &-list
+        &-card
+            width: 31%
+            .author
+                &-info
+                    .date
+                        
+
+@media screen and ( max-width: 1024px )
+    .post
+        &-card
+            width: 47%
+            .author
+                &-info
+                    .date
+                        width: 40%
+
+@media screen and ( max-width: 540px )
+    .post
+        &-list
+        &-card
+            width: 100%
+
+
+

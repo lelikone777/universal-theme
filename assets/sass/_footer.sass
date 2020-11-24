@@ -117,15 +117,28 @@
             flex-direction: column
         &-nav
             align-items: start
+            &-wrapper
+                margin: 20px auto
         &-text-wrapper
             flex-direction: column
             justify-content: center
             align-items: center
+            text-align: center
+        &-form
+            &-title
+                text-align: center
 
-@media screen and ( max-width: 430px )
-    .footer-nav
-        flex-wrap: wrap
-        align-items: baseline
-        justify-content: space-around
+@media screen and ( max-width: 480px )
+    .footer
+        &-form
+            flex-direction: column
+            &-input
+                margin-bottom: 30px
+        &-nav
+            flex-wrap: wrap
+            align-items: baseline
+            text-align: center
+    .menu-item
+        width: 45%
         
 
