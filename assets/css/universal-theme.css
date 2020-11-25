@@ -2534,6 +2534,10 @@ h4, p {
   padding: 50px 122px;
 }
 
+.section-dark .left {
+  min-width: 460px;
+}
+
 .page-title {
   font-family: 'Roboto Slab';
   font-style: normal;
@@ -2547,6 +2551,7 @@ h4, p {
 .page-text {
   font-size: 18px;
   line-height: 30px;
+  margin-bottom: 28px;
 }
 
 .contacts-wrapper {
@@ -2593,8 +2598,56 @@ h4, p {
   background-position: center right 20px;
   cursor: pointer;
   border: none;
+  margin-bottom: 120px;
 }
 
 .contacts-button:focus, .contacts-button:visited, .contacts-button:hover {
   color: #fff;
+}
+
+#button {
+  line-height: 20px;
+  display: inline-block;
+  color: #fff;
+  padding: 10px 20px;
+  padding-right: 50px;
+  border-radius: 20px;
+  background: #4592FF;
+  text-decoration: none;
+  background-image: url("../images/Arrow.svg");
+  background-repeat: no-repeat;
+  background-position: center right 20px;
+  cursor: pointer;
+  border: none;
+  max-width: 140px;
+}
+
+#button:focus, #button:visited, #button:hover {
+  color: #fff;
+}
+
+.wpcf7-form {
+  max-width: 460px;
+}
+
+.wpcf7-form input {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #939699;
+  margin-bottom: 10px;
+}
+
+.wpcf7-form textarea {
+  width: 100%;
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #939699;
+  min-height: 120px;
+  resize: none;
+  max-height: 120px;
 }

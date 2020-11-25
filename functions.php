@@ -924,7 +924,7 @@ function ajax_form() {
 	$contact_name = $_POST['contact_name'];
 	$contact_email = $_POST['contact_email'];
 	$contact_comment = $_POST['contact_comment'];
-	$message = 'Пользователь оставил свои данные: ' . $contact_name;
+	$message = 'Пользователь оставил свои данные: Имя - ' . $contact_name . '. Email: ' . $contact_email . '. Текст сообщения: ' . $contact_comment;
 
 	$headers = 'From: Алексей <2257855@gmail.com>' . "\r\n"; 
 	$send_message = wp_mail('reffery1@rambler.ru', 'Новая заявка с сайта', $message, $headers);
