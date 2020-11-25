@@ -2548,15 +2548,32 @@ h4, p {
   margin-bottom: 27px;
 }
 
-.page-text {
+.page .contacts-title {
   font-size: 18px;
+  font-style: normal;
   line-height: 30px;
   margin-bottom: 28px;
+  margin-top: 0;
 }
 
 .contacts-wrapper {
   display: flex;
   align-items: flex-start;
+}
+
+.contacts-wrapper .left {
+  margin-right: 80px;
+}
+
+.contacts-wrapper .right a, .contacts-wrapper .right adress {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.85);
+  font-style: normal;
+  margin-bottom: 15px;
+  display: block;
+  font-size: 14px;
+  line-height: 20px;
+  opacity: 0.85;
 }
 
 .contacts-form {
