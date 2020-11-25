@@ -26,6 +26,7 @@ if ( ! function_exists( 'universal_theme_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'universal_theme_setup' );
 
+
 /* Подключение сайдбара (Виджеты).*/
 
 function universal_example_widgets_init() {
@@ -903,6 +904,54 @@ function plural_form($number, $after) {
 	$cases = array (2, 0, 1, 1, 1, 2);
 	echo $number.' '.$after[ ($number%100>4 && $number%100<20)? 2: $cases[min($number%10, 5)] ];
 }
+
+
+
+add_action( 'wp_enqueue_scripts', 'adminAjax_data', 99 );
+function adminAjax_data(){
+
+	wp_localize_script( 'jquery', 'adminAjax', 
+		array(
+			'url' => admin_url('admin-ajax.php')
+		)
+	);  
+
+}
+
+add_action('wp_ajax_contacts_form', 'ajax_form');
+add_action('wp_ajax_nopriv_contacts_form', 'ajax_form');
+function ajax_form() {
+	$contact_name = $_POST['contact_name'];
+	$contact_email = $_POST['contact_email'];
+	$contact_comment = $_POST['contact_comment'];
+	$message = 'Пользователь оставил свои данные: ' . $contact_name;
+
+	$headers = 'From: Алексей <2257855@gmail.com>' . "\r\n"; 
+	$send_message = wp_mail('reffery1@rambler.ru', 'Новая заявка с сайта', $message, $headers);
+	if ($send_message) {
+		echo 'Все получилось';
+	} else {
+		echo 'Где то есть ошибка';
+	}
+	wp_die();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // ##Убираем циклическую ссылку из логотипов на главной странице
 // function nanima_logo() {
