@@ -1,5 +1,6 @@
 <?php get_header('post'); ?>
     <main class="site-main">
+    <div class="container"> <h1 style="font-size:40px; color:black">Single.php</h1></div>    
             <?php
             //Пока есть посты
                 while ( have_posts() ) :
@@ -20,6 +21,7 @@
                     ?>
                         <?php get_sidebar('post-recent'); ?>
                         <div class="container">
+                        
                             <?php
                                 // Если комментарии к записи открыты - выводим комментарии
                                 if ( comments_open() || get_comments_number() ) :
