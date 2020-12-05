@@ -1,6 +1,5 @@
 <?php get_header('post'); ?>
     <main class="site-main">
-    <div class="container"> <h1 style="font-size:40px; color:black">Single.php</h1></div>    
             <?php
             //Пока есть посты
                 while ( have_posts() ) :
