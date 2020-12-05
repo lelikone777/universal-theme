@@ -88,6 +88,8 @@
 						<span class="likes-counter"><?php comments_number('0', '1', '%') ?> </span>
 					</div>
 				</div>
+
+				
 				<div class="post-author">
 					<div class="post-author-info">
 						<?php $author_id = get_the_author_meta('ID'); ?>
