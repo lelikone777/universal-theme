@@ -2565,7 +2565,11 @@ h4, p {
   margin-right: 80px;
 }
 
-.contacts-wrapper .right a, .contacts-wrapper .right adress {
+.contacts-wrapper .right {
+  max-width: 238px;
+}
+
+.contacts-wrapper .right a, .contacts-wrapper .right address {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.85);
   font-style: normal;
@@ -2574,6 +2578,7 @@ h4, p {
   font-size: 14px;
   line-height: 20px;
   opacity: 0.85;
+  margin-bottom: 15px;
 }
 
 .contacts-form {

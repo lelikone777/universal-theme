@@ -59,7 +59,7 @@
         <div class="footer-text-wrapper">
                <?php dynamic_sidebar( 'sidebar-footer-text' );?>
                <span class="footer-copyright">
-                <?php echo get_post_meta( 90 , 'phone', true) . '&copy;' . get_bloginfo( 'name' ) ?>
+                <?php echo the_field('phone') . ' &copy; ' . get_bloginfo( 'name' ) ?>
                </span>
         </div>
     </div> 

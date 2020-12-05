@@ -43,7 +43,7 @@
         <div class="footer-text-wrapper">
                <?php dynamic_sidebar( 'sidebar-footer-text' );?>
                <span class="footer-copyright">
-                <?php echo date('Y') . '&copy;' . get_bloginfo( 'name' ) ?>
+                <?php echo 'date' . '&copy;' . get_bloginfo( 'name' ) ?>
                </span>
         </div>
     </div> 
