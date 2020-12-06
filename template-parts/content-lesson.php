@@ -29,12 +29,29 @@
 								echo end ($tmp);
 							?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					<?php } elseif  (preg_match('/vimeo/', $video_link, $match )) {
-							?>
-							<iframe src="https://player.vimeo.com/video/<?php
-								$tmp = explode('/video/', get_field('video_link'));
-								echo end ($tmp); ?>" width="100%" height="450" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-								
-					<?php } ?>
+						?>
+						<iframe src="https://player.vimeo.com/video/<?php
+							$tmp = explode('/video/', get_field('video_link'));
+							echo end ($tmp); ?>" width="100%" height="450" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+							
+				<?php } 
+
+
+
+
+
+
+
+
+
+
+
+					// 	function loop(){ 
+					// 	$tmp = explode('/video/', get_field('video_link'));	
+					// 	echo end ($tmp);
+					// }
+
+					// 	echo '<iframe src="https://player.vimeo.com/video/' . loop() . '" width="100%" height="450" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>';} ?>
 
 				</div>
 
