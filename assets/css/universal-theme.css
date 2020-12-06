@@ -2673,3 +2673,12 @@ h4, p {
   resize: none;
   max-height: 120px;
 }
+
+.single-lesson {
+  background-color: #fff;
+}
+
+.lesson-header {
+  padding: 80px 0;
+  color: #fff;
+}

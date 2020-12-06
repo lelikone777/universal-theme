@@ -1,9 +1,6 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<!-- Шапка потса -->
-	<header class="entry-header <?php echo get_post_type();?>-header" style="background: linear-gradient(0deg, rgba(38, 45, 51, 0.75), rgba(38, 45, 51, 0.75)), url(<?php if( has_post_thumbnail() ) { echo get_the_post_thumbnail_url(); }
-    	else {
-            echo get_template_directory_uri().'/assets/images/img-default.png';
-		} ?> ) no-repeat center; background-size: cover">
+	<header class="entry-header <?php echo get_post_type();?>-header" style="background: linear-gradient(0deg, rgba(38, 45, 51, 0.75), rgba(38, 45, 51, 0.75));  no-repeat center; background-size: cover">
 
 		<div class="container">
 			<div class="post-header-wrapper">
@@ -18,18 +15,40 @@
 									esc_html( $category -> name ),
 								);
 							}
-
-	
-					?>
+						?>
 				</div>
-				<div class="post-header-title-wrapper">
+				<div class="video">
+
+				<?php 
+					$video_link = get_field('video_link'); 
+						if (preg_match('/youtu/', $video_link, $match )) {
+				?>
+							<iframe width="100%" height="450" src="https://www.youtube.com/embed/<?php
+							
+								$tmp = explode('be/', get_field('video_link'));
+								echo end ($tmp);
+							?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<?php } elseif  (preg_match('/vimeo/', $video_link, $match )) {
+							?>
+							<iframe src="https://player.vimeo.com/video/<?php
+								$tmp = explode('/video/', get_field('video_link'));
+								echo end ($tmp); ?>" width="100%" height="450" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+								
+					<?php } ?>
+
+				</div>
+
+
+								
+
+				<div class="lesson-header-title-wrapper">
 				
 					<?php
 					//Проверяем: точно ли мы на странице поста?
 						if ( is_singular() ) :
-							the_title( '<h1 class="post-title">', '</h1>' );
+							the_title( '<h1 class="lesson-header-title">', '</h1>' );
 						else :
-							the_title( '<h2 class="post-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+							the_title( '<h2 class="lesson-header-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 						endif;?>
 				</div>
 				<div class="news-feedback post-header-info">
@@ -40,28 +59,6 @@
 					</svg>			
 					<span class="date"><?php the_time( 'j F , H:i' );?></span>
 
-				</div>
-
-
-				<div class="post-author">
-					<div class="post-author-info">
-						<?php $author_id = get_the_author_meta('ID'); ?>
-						<img src="<?php echo get_avatar_url($author_id)?>" href="#" class="post-author-avatar"
-							alt="author-avatar"></img>						
-						<span class="post-author-name"><?php the_author(); ?></span>
-						<span class="post-author-rank">Должность</span>
-						<span class="post-author-posts">
-						
-							<?php plural_form(
-								count_user_posts($author_id),
-								// Варианты написания окончаний для слов количества (1,2 и 5)
-								array('статья','статьи','статей')
-							);?> 
-						</span>
-					</div>
-					<a href="<?php echo get_author_posts_url($author_id)?>" class="post-author-link">
-						Страница автора
-					</a>
 				</div>
 			</div>
 		</div>
