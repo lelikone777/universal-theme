@@ -30,38 +30,18 @@
 							?>
 							" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					<?php } 
-						elseif  (preg_match('/vimeo/', $video_link, $match )) {
-					?>
-							<iframe src="https://player.vimeo.com/video/<?php
-								$tmp = explode('/video/', get_field('video_link'));
-								echo end ($tmp); ?>" width="100%" height="450" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+						elseif  (preg_match('/vimeo.com/', $video_link, $match )) {
+					 ?>
+							<iframe src="https://player.vimeo.com/video/
+							<?php
+								$tmp = explode('vimeo.com/', get_field('video_link'));
+								echo end ($tmp); 
+							?>
+							" width="100%" height="450" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 							
-				<?php } 
+				<?php } ?>
 
-
-
-
-
-// <iframe src="https://player.vimeo.com/video/481386833?byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-// 	<p><a href="https://vimeo.com/481386833">Changing Seasons feat. Mark Matthews | MTB RAW</a> from <a href="https://vimeo.com/scottbellvisuals">Scott Bell Visuals</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
-
-
-// <iframe src="https://player.vimeo.com/video/487114118?color=ffffff&title=0&byline=0&portrait=0&badge=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-// 	<p><a href="https://vimeo.com/487114118">Nike Japan - You Can&#039;t Stop The Future</a> from <a href="https://vimeo.com/jovantodorovic">Jovan Todorovic</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
-
-
-					// 	function loop(){ 
-					// 	$tmp = explode('/video/', get_field('video_link'));	
-					// 	echo end ($tmp);
-					// }
-
-					// 	echo '<iframe src="https://player.vimeo.com/video/' . loop() . '" width="100%" height="450" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>';} ?>
-
-				</div>
-
-
-								
-
+			</div>
 				<div class="lesson-header-title-wrapper">
 				
 					<?php
