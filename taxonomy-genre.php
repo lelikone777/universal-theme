@@ -1,7 +1,6 @@
 <?php 
 get_header(); ?>
     <div class="container">
-    Таксономии
         <h1 class="category-title"><?php single_cat_title() ?></h1>
         <div class="post-list">
             <?php while ( have_posts() ){ the_post(); ?>

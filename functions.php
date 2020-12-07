@@ -69,7 +69,7 @@ if ( ! function_exists( 'universal_theme_setup' ) ) :
 			// регистрирующая новые таксономии (create_lesson_taxonomies)
 			add_action( 'init', 'create_lesson_taxonomies' );
 
-			// функция, создающая 2 новые таксономии "genres" и "authors" для постов типа "lesson"
+			// функция, создающая 2 новые таксономии "genres" и "Teachers" для постов типа "lesson"
 			function create_lesson_taxonomies(){
 
 				// Добавляем древовидную таксономию 'genre' (как категории)
