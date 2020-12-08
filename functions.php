@@ -2,7 +2,11 @@
 
 if ( ! function_exists( 'universal_theme_setup' ) ) :
     function universal_theme_setup() {
-        //Добавление тэга Title
+		
+		//Подключаем перевод
+		load_theme_textdomain( 'universal', get_template_directory() . '/languages' );
+		
+		//Добавление тэга Title
         add_theme_support( 'title-tag' );
 
         //Добавление миниатюр
@@ -76,17 +80,17 @@ if ( ! function_exists( 'universal_theme_setup' ) ) :
 				register_taxonomy('genre', array('lesson'), array(
 					'hierarchical'  => true,
 					'labels'        => array(
-						'name'              => _x( 'Genres', 'taxonomy general name' ),
-						'singular_name'     => _x( 'Genre', 'taxonomy singular name' ),
-						'search_items'      =>  __( 'Search Genres' ),
-						'all_items'         => __( 'All Genres' ),
-						'parent_item'       => __( 'Parent Genre' ),
-						'parent_item_colon' => __( 'Parent Genre:' ),
-						'edit_item'         => __( 'Edit Genre' ),
-						'update_item'       => __( 'Update Genre' ),
-						'add_new_item'      => __( 'Add New Genre' ),
-						'new_item_name'     => __( 'New Genre Name' ),
-						'menu_name'         => __( 'Genre' ),
+						'name'              => _x( 'Genres', 'taxonomy general name', 'universal' ),
+						'singular_name'     => _x( 'Genre', 'taxonomy singular name', 'universal' ),
+						'search_items'      =>  __( 'Search Genres', 'universal' ),
+						'all_items'         => __( 'All Genres', 'universal' ),
+						'parent_item'       => __( 'Parent Genre', 'universal' ),
+						'parent_item_colon' => __( 'Parent Genre:', 'universal' ),
+						'edit_item'         => __( 'Edit Genre', 'universal' ),
+						'update_item'       => __( 'Update Genre', 'universal' ),
+						'add_new_item'      => __( 'Add New Genre', 'universal' ),
+						'new_item_name'     => __( 'New Genre Name', 'universal' ),
+						'menu_name'         => __( 'Genre', 'universal' ),
 					),
 					'show_ui'       => true,
 					'query_var'     => true,
@@ -97,21 +101,21 @@ if ( ! function_exists( 'universal_theme_setup' ) ) :
 				register_taxonomy('teacher', 'lesson',array(
 					'hierarchical'  => false,
 					'labels'        => array(
-						'name'                        => _x( 'Teachers', 'taxonomy general name' ),
-						'singular_name'               => _x( 'Teacher', 'taxonomy singular name' ),
-						'search_items'                =>  __( 'Search Teachers' ),
-						'popular_items'               => __( 'Popular Teachers' ),
-						'all_items'                   => __( 'All Teachers' ),
+						'name'                        => _x( 'Teachers', 'taxonomy general name', 'universal' ),
+						'singular_name'               => _x( 'Teacher', 'taxonomy singular name', 'universal' ),
+						'search_items'                =>  __( 'Search Teachers', 'universal' ),
+						'popular_items'               => __( 'Popular Teachers', 'universal' ),
+						'all_items'                   => __( 'All Teachers', 'universal' ),
 						'parent_item'                 => null,
 						'parent_item_colon'           => null,
-						'edit_item'                   => __( 'Edit Teacher' ),
-						'update_item'                 => __( 'Update Teacher' ),
-						'add_new_item'                => __( 'Add New Teacher' ),
-						'new_item_name'               => __( 'New Teacher Name' ),
-						'separate_items_with_commas'  => __( 'Separate teachers with commas' ),
-						'add_or_remove_items'         => __( 'Add or remove teachers' ),
-						'choose_from_most_used'       => __( 'Choose from the most used teachers' ),
-						'menu_name'                   => __( 'teachers' ),
+						'edit_item'                   => __( 'Edit Teacher', 'universal' ),
+						'update_item'                 => __( 'Update Teacher', 'universal' ),
+						'add_new_item'                => __( 'Add New Teacher', 'universal' ),
+						'new_item_name'               => __( 'New Teacher Name', 'universal' ),
+						'separate_items_with_commas'  => __( 'Separate teachers with commas', 'universal' ),
+						'add_or_remove_items'         => __( 'Add or remove teachers', 'universal' ),
+						'choose_from_most_used'       => __( 'Choose from the most used teachers', 'universal' ),
+						'menu_name'                   => __( 'teachers', 'universal' ),
 					),
 					'show_ui'       => true,
 					'query_var'     => true,
