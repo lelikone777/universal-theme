@@ -2,7 +2,17 @@
 
 if ( ! function_exists( 'universal_theme_setup' ) ) :
     function universal_theme_setup() {
-        //Добавление тэга Title
+		
+		
+		// Удаляем роль при деактивации нашей темы
+		add_action( 'switch_theme', 'deactivate_universal_theme' );
+		function deactivate_universal_theme() {
+			remove_role( 'developer' );
+		}
+		
+	
+		
+		//Добавление тэга Title
 		add_theme_support( 'title-tag' );
 		
 		//Подключаем файлы перевода к теме
