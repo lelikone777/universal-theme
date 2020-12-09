@@ -82,7 +82,7 @@
 				);
 				wp_link_pages(
 					array(
-						'before' => '<div class="page-links">' . esc_html__( 'Страницы:', 'universal-example' ),
+						'before' => '<div class="page-links">' . esc_html__( __('Pages:', 'universal'), 'universal-example' ),
 						'after'  => '</div>',
 					)
 				);

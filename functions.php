@@ -3,7 +3,10 @@
 if ( ! function_exists( 'universal_theme_setup' ) ) :
     function universal_theme_setup() {
         //Добавление тэга Title
-        add_theme_support( 'title-tag' );
+		add_theme_support( 'title-tag' );
+		
+		//Подключаем файлы перевода к теме
+		load_theme_textdomain( 'universal', get_template_directory() . '/languages' );
 
         //Добавление миниатюр
         add_theme_support( 'post-thumbnails', array( 'post' ) );
@@ -28,20 +31,20 @@ if ( ! function_exists( 'universal_theme_setup' ) ) :
 			register_post_type( 'lesson', [
 				'label'  => null,
 				'labels' => [
-					'name'               => 'Уроки', // основное название для типа записи
-					'singular_name'      => 'Урок', // название для одной записи этого типа
-					'add_new'            => 'Добавить Урок', // для добавления новой записи
-					'add_new_item'       => 'Добавление Урока', // заголовка у вновь создаваемой записи в админ-панели.
-					'edit_item'          => 'Редактирование Урока', // для редактирования типа записи
-					'new_item'           => 'Новый Урок', // текст новой записи
-					'view_item'          => 'Смотреть Уроки', // для просмотра записи этого типа.
-					'search_items'       => 'Искать Уроки', // для поиска по этим типам записи
-					'not_found'          => 'Не найдено', // если в результате поиска ничего не было найдено
-					'not_found_in_trash' => 'Не найдено в корзине', // если не было найдено в корзине
+					'name'               => __('Lessons', 'universal'), // основное название для типа записи
+					'singular_name'      => __('Lesson', 'universal'), // название для одной записи этого типа
+					'add_new'            => __('Add new', 'universal'), // для добавления новой записи
+					'add_new_item'       => __('Add new Lesson', 'universal'), // заголовка у вновь создаваемой записи в админ-панели.
+					'edit_item'          => __('Edit new Lesson', 'universal'), // для редактирования типа записи
+					'new_item'           => __('New Lesson', 'universal'), // текст новой записи
+					'view_item'          => __('View Lesson', 'universal'), // для просмотра записи этого типа.
+					'search_items'       => __('Search Lessons', 'universal'), // для поиска по этим типам записи
+					'not_found'          => __('Not found Lessons', 'universal'), // если в результате поиска ничего не было найдено
+					'not_found_in_trash' => __('Not found Lessons in trash', 'universal'), // если не было найдено в корзине
 					'parent_item_colon'  => '', // для родителей (у древовидных типов)
-					'menu_name'          => 'Уроки', // название меню
+					'menu_name'          => __('Lessons', 'universal'), // название меню
 				],
-				'description'         => 'Раздел с видеоУроками',
+				'description'         => __('Video Lessons', 'universal'),
 				'public'              => true,
 				// 'publicly_queryable'  => null, // зависит от public
 				// 'exclude_from_search' => null, // зависит от public
@@ -76,17 +79,17 @@ if ( ! function_exists( 'universal_theme_setup' ) ) :
 				register_taxonomy('genre', array('lesson'), array(
 					'hierarchical'  => true,
 					'labels'        => array(
-						'name'              => _x( 'Genres', 'taxonomy general name' ),
-						'singular_name'     => _x( 'Genre', 'taxonomy singular name' ),
-						'search_items'      =>  __( 'Search Genres' ),
-						'all_items'         => __( 'All Genres' ),
-						'parent_item'       => __( 'Parent Genre' ),
-						'parent_item_colon' => __( 'Parent Genre:' ),
-						'edit_item'         => __( 'Edit Genre' ),
-						'update_item'       => __( 'Update Genre' ),
-						'add_new_item'      => __( 'Add New Genre' ),
-						'new_item_name'     => __( 'New Genre Name' ),
-						'menu_name'         => __( 'Genre' ),
+						'name'              => _x( 'Genres', 'taxonomy general name', 'universal' ),
+						'singular_name'     => _x( 'Genre', 'taxonomy singular name', 'universal' ),
+						'search_items'      =>  __( 'Search Genres', 'universal' ),
+						'all_items'         => __( 'All Genres', 'universal' ),
+						'parent_item'       => __( 'Parent Genre', 'universal' ),
+						'parent_item_colon' => __( 'Parent Genre:', 'universal' ),
+						'edit_item'         => __( 'Edit Genre', 'universal' ),
+						'update_item'       => __( 'Update Genre', 'universal' ),
+						'add_new_item'      => __( 'Add New Genre', 'universal' ),
+						'new_item_name'     => __( 'New Genre Name', 'universal' ),
+						'menu_name'         => __( 'Genre', 'universal' ),
 					),
 					'show_ui'       => true,
 					'query_var'     => true,
@@ -97,21 +100,21 @@ if ( ! function_exists( 'universal_theme_setup' ) ) :
 				register_taxonomy('teacher', 'lesson',array(
 					'hierarchical'  => false,
 					'labels'        => array(
-						'name'                        => _x( 'Teachers', 'taxonomy general name' ),
-						'singular_name'               => _x( 'Teacher', 'taxonomy singular name' ),
-						'search_items'                =>  __( 'Search Teachers' ),
-						'popular_items'               => __( 'Popular Teachers' ),
-						'all_items'                   => __( 'All Teachers' ),
+						'name'                        => _x( 'Teachers', 'taxonomy general name', 'universal' ),
+						'singular_name'               => _x( 'Teacher', 'taxonomy singular name', 'universal' ),
+						'search_items'                =>  __( 'Search Teachers', 'universal' ),
+						'popular_items'               => __( 'Popular Teachers', 'universal' ),
+						'all_items'                   => __( 'All Teachers', 'universal' ),
 						'parent_item'                 => null,
 						'parent_item_colon'           => null,
-						'edit_item'                   => __( 'Edit Teacher' ),
-						'update_item'                 => __( 'Update Teacher' ),
-						'add_new_item'                => __( 'Add New Teacher' ),
-						'new_item_name'               => __( 'New Teacher Name' ),
-						'separate_items_with_commas'  => __( 'Separate teachers with commas' ),
-						'add_or_remove_items'         => __( 'Add or remove teachers' ),
-						'choose_from_most_used'       => __( 'Choose from the most used teachers' ),
-						'menu_name'                   => __( 'teachers' ),
+						'edit_item'                   => __( 'Edit Teacher', 'universal' ),
+						'update_item'                 => __( 'Update Teacher', 'universal' ),
+						'add_new_item'                => __( 'Add New Teacher', 'universal' ),
+						'new_item_name'               => __( 'New Teacher Name', 'universal' ),
+						'separate_items_with_commas'  => __( 'Separate teachers with commas', 'universal' ),
+						'add_or_remove_items'         => __( 'Add or remove teachers', 'universal' ),
+						'choose_from_most_used'       => __( 'Choose from the most used teachers', 'universal' ),
+						'menu_name'                   => __( 'teachers', 'universal' ),
 					),
 					'show_ui'       => true,
 					'query_var'     => true,
@@ -129,9 +132,9 @@ add_action( 'after_setup_theme', 'universal_theme_setup' );
 function universal_example_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Сайдбар на главной странице сверху', 'universal-theme' ),
+			'name'          => esc_html__(__( 'Sidebar on main top', 'universal'), 'universal-theme' ),
 			'id'            => 'main-sidebar-top',
-			'description'   => esc_html__( 'Добавьте виджеты сюда.', 'universal-theme' ),
+			'description'   => esc_html__(__('Add Widgets Here', 'universal'), 'universal-theme' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -140,9 +143,9 @@ function universal_example_widgets_init() {
 	);
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Сайдбар на главной странице снизу', 'universal-theme' ),
+			'name'          => esc_html__(  __('Sidebar on main bottom', 'universal'), 'universal-theme' ),
 			'id'            => 'main-sidebar-bottom',
-			'description'   => esc_html__( 'Добавьте виджеты сюда.', 'universal-theme' ),
+			'description'   => esc_html__(__('Add Widgets Here', 'universal'), 'universal-theme' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -151,9 +154,9 @@ function universal_example_widgets_init() {
 	);
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Сайдбар на странице поста с последними постами', 'universal-theme' ),
+			'name'          => esc_html__( __('Sidebar post with recent posts', 'universal'), 'universal-theme' ),
 			'id'            => 'sidebar-post-recent',
-			'description'   => esc_html__( 'Добавьте виджеты сюда.', 'universal-theme' ),
+			'description'   => esc_html__(  __('Add widgets here', 'universal'), 'universal-theme' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '',
@@ -162,9 +165,9 @@ function universal_example_widgets_init() {
 	);
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Меню в подвале', 'universal-theme' ),
+			'name'          => esc_html__(  __('Footer menu', 'universal'), 'universal-theme' ),
 			'id'            => 'sidebar-footer',
-			'description'   => esc_html__( 'Добавьте меню сюда.', 'universal-theme' ),
+			'description'   => esc_html__(  __('Add menu here', 'universal'), 'universal-theme' ),
 			'before_widget' => '<section id="%1$s" class="footer-menu %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="footer-menu-title">',
@@ -173,9 +176,9 @@ function universal_example_widgets_init() {
 	);
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Текст в подвале', 'universal-theme' ),
+			'name'          => esc_html__(  __('Footer text', 'universal'), 'universal-theme' ),
 			'id'            => 'sidebar-footer-text',
-			'description'   => esc_html__( 'Добавьте текст сюда.', 'universal-theme' ),
+			'description'   => esc_html__(  __('Add text Here', 'universal'), 'universal-theme' ),
 			'before_widget' => '<section id="%1$s" class="footer-text %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '',
@@ -241,24 +244,24 @@ class Downloader_Widget extends WP_Widget {
 	 * @param array $instance сохраненные данные из настроек
 	 */
 	function form( $instance ) {
-        $title = @ $instance['title'] ?: 'Полезные файлы';
-        $description = @ $instance['description'] ?: 'Описание';
+        $title = @ $instance['title'] ?: __('Needed Files', 'universal');
+        $description = @ $instance['description'] ?: __('description', 'universal');
         $link = @ $instance['link'] ?: 'https://some-link.ru';
 
 		?>
 <p>
-    <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Заголовок:' ); ?></label>
+    <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'universal' ); ?></label>
     <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>"
         name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
 </p>
 <p>
-    <label for="<?php echo $this->get_field_id( 'description' ); ?>"><?php _e( 'Описание:' ); ?></label>
+    <label for="<?php echo $this->get_field_id( 'description' ); ?>"><?php _e( 'Description:', 'universal' ); ?></label>
     <input class="widefat" id="<?php echo $this->get_field_id( 'description' ); ?>"
         name="<?php echo $this->get_field_name( 'description' ); ?>" type="text"
         value="<?php echo esc_attr( $description ); ?>">
 </p>
 <p>
-    <label for="<?php echo $this->get_field_id( 'link' ); ?>"><?php _e( 'Ссылка на файл:' ); ?></label>
+    <label for="<?php echo $this->get_field_id( 'link' ); ?>"><?php _e( 'File link:', 'universal' ); ?></label>
     <input class="widefat" id="<?php echo $this->get_field_id( 'link' ); ?>"
         name="<?php echo $this->get_field_name( 'link' ); ?>" type="text" value="<?php echo esc_attr( $link ); ?>">
 </p>
@@ -335,7 +338,7 @@ class Social_Widget extends WP_Widget {
 		parent::__construct(
 			'social_widget', // ID виджета, если не указать (оставить ''), то ID будет равен названию класса в нижнем регистре: social_widget
 			'Социальные сети',
-			array( 'description' => 'Добавьте социальные сети сюда', 'classname' => 'widget-social', )
+			array( 'description' =>  __('Add socials here', 'universal'), 'classname' => 'widget-social', )
 		);
 
 		// скрипты/стили виджета, только если он активен
@@ -384,24 +387,24 @@ class Social_Widget extends WP_Widget {
        
 		?>
 <p>
-    <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Заголовок:' ); ?></label>
+    <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'universal' ); ?></label>
     <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>"
         name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
 </p>
 <p>
-    <label for="<?php echo $this->get_field_id( 'facebook' ); ?>"><?php _e( 'Страница фейсбук:' ); ?></label>
+    <label for="<?php echo $this->get_field_id( 'facebook' ); ?>"><?php _e( 'Facebook:', 'universal' ); ?></label>
     <input class="widefat" id="<?php echo $this->get_field_id( 'facebook' ); ?>"
         name="<?php echo $this->get_field_name( 'facebook' ); ?>" type="text"
         value="<?php echo esc_attr( $facebook ); ?>">
 </p>
 <p>
-    <label for="<?php echo $this->get_field_id( 'twitter' ); ?>"><?php _e( 'Страница твиттер:' ); ?></label>
+    <label for="<?php echo $this->get_field_id( 'twitter' ); ?>"><?php _e( 'Twitter:', 'universal' ); ?></label>
     <input class="widefat" id="<?php echo $this->get_field_id( 'twitter' ); ?>"
         name="<?php echo $this->get_field_name( 'twitter' ); ?>" type="text"
         value="<?php echo esc_attr( $twitter ); ?>">
 </p>
 <p>
-    <label for="<?php echo $this->get_field_id( 'youtube' ); ?>"><?php _e( 'Страница youtube:' ); ?></label>
+    <label for="<?php echo $this->get_field_id( 'youtube' ); ?>"><?php _e( 'Youtube:', 'universal' ); ?></label>
     <input class="widefat" id="<?php echo $this->get_field_id( 'youtube' ); ?>"
         name="<?php echo $this->get_field_name( 'youtube' ); ?>" type="text"
         value="<?php echo esc_attr( $youtube ); ?>">
@@ -478,7 +481,7 @@ class Social_Widget2 extends WP_Widget {
 		parent::__construct(
 			'social_widget2', // ID виджета, если не указать (оставить ''), то ID будет равен названию класса в нижнем регистре: social_widget2
 			'Социальные сети2',
-			array( 'description' => 'Добавьте социальные сети2 сюда', 'classname' => 'widget-social2', )
+			array( 'description' =>  __('Add socials2 here', 'universal'), 'classname' => 'widget-social2', )
 		);
 
 		// скрипты/стили виджета, только если он активен
@@ -532,30 +535,30 @@ class Social_Widget2 extends WP_Widget {
        
 		?>
 <p>
-    <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Заголовок:' ); ?></label>
+    <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'universal' ); ?></label>
     <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>"
         name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
 </p>
 <p>
-    <label for="<?php echo $this->get_field_id( 'facebook' ); ?>"><?php _e( 'Страница фейсбук:' ); ?></label>
+    <label for="<?php echo $this->get_field_id( 'facebook' ); ?>"><?php _e( 'Facebook:', 'universal' ); ?></label>
     <input class="widefat" id="<?php echo $this->get_field_id( 'facebook' ); ?>"
         name="<?php echo $this->get_field_name( 'facebook' ); ?>" type="text"
         value="<?php echo esc_attr( $facebook ); ?>">
 </p>
 <p>
-    <label for="<?php echo $this->get_field_id( 'twitter' ); ?>"><?php _e( 'Страница твиттер:' ); ?></label>
+    <label for="<?php echo $this->get_field_id( 'twitter' ); ?>"><?php _e( 'Twitter:', 'universal' ); ?></label>
     <input class="widefat" id="<?php echo $this->get_field_id( 'twitter' ); ?>"
         name="<?php echo $this->get_field_name( 'twitter' ); ?>" type="text"
         value="<?php echo esc_attr( $twitter ); ?>">
 </p>
 <p>
-    <label for="<?php echo $this->get_field_id( 'youtube' ); ?>"><?php _e( 'Страница youtube:' ); ?></label>
+    <label for="<?php echo $this->get_field_id( 'youtube' ); ?>"><?php _e( 'Youtube:', 'universal' ); ?></label>
     <input class="widefat" id="<?php echo $this->get_field_id( 'youtube' ); ?>"
         name="<?php echo $this->get_field_name( 'youtube' ); ?>" type="text"
         value="<?php echo esc_attr( $youtube ); ?>">
 </p>
 <p>
-    <label for="<?php echo $this->get_field_id( 'instagram' ); ?>"><?php _e( 'Страница instagram:' ); ?></label>
+    <label for="<?php echo $this->get_field_id( 'instagram' ); ?>"><?php _e( 'Instagram:', 'universal' ); ?></label>
     <input class="widefat" id="<?php echo $this->get_field_id( 'instagram' ); ?>"
         name="<?php echo $this->get_field_name( 'instagram' ); ?>" type="text"
         value="<?php echo esc_attr( $instagram ); ?>">
@@ -707,12 +710,12 @@ class Recent_Posts_Widget extends WP_Widget {
 
 		?>
 <p>
-    <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Заголовок:' ); ?></label>
+    <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'title:', 'universal' ); ?></label>
     <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>"
         name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
 </p>
 <p>
-    <label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e( 'Количество постов:' ); ?></label>
+    <label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e( 'number of posts:', 'universal' ); ?></label>
     <input class="widefat" id="<?php echo $this->get_field_id( 'count' ); ?>"
         name="<?php echo $this->get_field_name( 'count' ); ?>" type="text" value="<?php echo esc_attr( $count ); ?>">
 </p>
@@ -873,7 +876,7 @@ class Recent_Posts_Widget2 extends WP_Widget {
 
 		?>
 			<p>
-				<label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e( 'Количество постов:' ); ?></label>
+				<label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e( 'Number of posts:' ); ?></label>
 				<input class="widefat" id="<?php echo $this->get_field_id( 'count' ); ?>"
 					name="<?php echo $this->get_field_name( 'count' ); ?>" type="text" value="<?php echo esc_attr( $count ); ?>">
 			</p>
