@@ -25,7 +25,7 @@
                     <img src="<?php echo get_avatar_url($author_id)?>" href="#" class="avatar" alt="avatar"></img>
                     <div class="author-bio">
                         <span class="author-name"><?php the_author(); ?></span>
-                        <span class="author-rank">Должность</span>
+                        <span class="author-rank"><?php echo get_the_author_meta('roles', $author_id) [0]?></span>
                     </div>
                 </a>
 

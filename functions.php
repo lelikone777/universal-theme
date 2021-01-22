@@ -9,6 +9,16 @@ if ( ! function_exists( 'universal_theme_setup' ) ) :
 		function deactivate_universal_theme() {
 			remove_role( 'developer' );
 		}
+
+		
+		
+		// Добавляем роль при активации нашей темы
+		add_action( 'after_switch_theme', 'activate_universal_theme' );
+		function activate_universal_theme() {
+			$author = get_role( 'author' );
+			add_role( 'developer', 'Разработчик', $author->capabilities);
+		}
+		
 		
 	
 		
